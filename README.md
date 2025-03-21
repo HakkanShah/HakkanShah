@@ -2,7 +2,7 @@
 - 💞️ I’m interested in DSA and Problem Solving
 - 🌱 I’m currently learning MERN Stack Development
 - 👀 I’m looking for a new Project idea based on MERN Stack
-- ⚡ Part time Game developer 
+- ⚡ Part time Meme Creator 🌝
 - 📫 Mail me at hakkanparbe@gmail.com
 
 
