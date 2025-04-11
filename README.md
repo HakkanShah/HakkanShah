@@ -1,4 +1,4 @@
-- 👋 Hi, I’m Hakkan
+- 👋 Hi, I’m Hakkan Parbej Shah
 - 💞️ I’m interested in DSA and Problem Solving
 - 🌱 I’m currently learning MERN Stack Development
 - 👀 I’m looking for a new Project idea based on MERN Stack
