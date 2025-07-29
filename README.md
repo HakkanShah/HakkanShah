@@ -5,9 +5,8 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Comic+Neue&pause=400&color=00F72A&center=true&vCenter=true&width=900&size=50&lines=Full+Stack+Developer;Problem+Solver;MERN+Stack+Enthusiast;Creative+Meme+Artist+🌝" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Shadows+Into+Light&size=34&duration=2000&pause=400&color=00FF00&vCenter=true&width=700&lines=⚡+Full+Stack+Developer;🧠+Problem+Solver;🚀+MERN+Stack+Enthusiast;🎨+Creative+Meme+Artist+🌝" alt="Typing SVG" />
 </div>
-
 ---
 
 ## 🚀 About Me
