@@ -1,6 +1,10 @@
 # <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> Hey there, I'm Hakkan
 
 <div align="center">
+  <img src="https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif" width="100%" />
+</div>
+
+<div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=00F72A&center=true&vCenter=true&width=435&lines=Full+Stack+Developer;Problem+Solver;MERN+Stack+Enthusiast;Creative+Meme+Artist+🌝" alt="Typing SVG" />
 </div>
 
