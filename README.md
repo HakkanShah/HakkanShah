@@ -69,6 +69,6 @@
   <img src="https://komarev.com/ghpvc/?username=HakkanShah&label=Profile%20Views&color=brightgreen&style=flat" alt="Profile Views" />
   <p>
     <br>
-  <img src="https://media.giphy.com/media/NX3tbtZxVr44rySrCO/giphy.gif" width="60" />
+  <img src="https://media.giphy.com/media/NX3tbtZxVr44rySrCO/giphy.gif" width="200" />
   </p>
 </div>
