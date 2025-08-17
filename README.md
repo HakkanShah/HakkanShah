@@ -14,7 +14,7 @@
 - 🔍 Always hunting for creative project ideas  
 - 👨‍💻 Currently mastering backend skills  
 - 🎨 Part-time Meme Crafter with a wild imagination  
-- 📫 Let's talk: **hakkanparbe@gmail.com**
+- 📫 Let's talk: **hakkanparbej@gmail.com**
 
 ---
 
