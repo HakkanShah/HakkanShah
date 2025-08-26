@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> Hey there, I'm Hakkan
+# <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> Hi, I'm Hakkan
 
 <div align="center">
   <img src="https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif" width="100%" />
