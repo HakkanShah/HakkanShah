@@ -59,10 +59,9 @@
 ### Streaks
   <img src="https://github-readme-streak-stats.herokuapp.com?user=HakkanShah&theme=radical&hide_border=true" width="100%" />
 
-
 ---
 
-## 🧠 Currently Learning
+### Currently Learning
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HakkanShah&layout=compact&theme=radical&hide_border=true" />
