@@ -1,7 +1,11 @@
 # <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> Hi, I'm Hakkan
 
 <div align="center">
-  <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNjFieGZvMmprYWJtazE3bG94a3VmazF5cDV2dHlmNGltdm10eWR0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/93X7kOOzkrd2eQvFnX/giphy.gif" width="100%" />
+  <img 
+    src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNjFieGZvMmprYWJtazE3bG94a3VmazF5cDV2dHlmNGltdm10eWR0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/93X7kOOzkrd2eQvFnX/giphy.gif" 
+    width="100%" 
+    style="border-radius: 15px;" 
+  />
 </div>
 
 ## 🚀 About Me
