@@ -1,11 +1,11 @@
 # <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> Hi, I'm Hakkan
 
 <div align="center">
-  <img src="https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif" width="100%" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Rubik+Wet+Paint&size=36&duration=2000&pause=460&color=00F72A&center=true&vCenter=true&width=800&lines=⚡+Full+Stack+Developer;🧠+Problem+Solver;🚀+MERN+Stack+Enthusiast;🎨+Creative+Meme+Artist+🌝" alt="Typing SVG" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Rubik+Wet+Paint&size=36&duration=2000&pause=460&color=00F72A&center=true&vCenter=true&width=800&lines=⚡+Full+Stack+Developer;🧠+Problem+Solver;🚀+MERN+Stack+Enthusiast;🎨+Creative+Meme+Artist+🌝" alt="Typing SVG" />
+  <img src="https://media.giphy.com/media/QMkPpxPDYY0fu/giphy.gif" width="100%" />
 </div>
 
 ## 🚀 About Me
