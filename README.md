@@ -6,7 +6,7 @@
     width="100%" 
     style="border-radius: 15px;" 
   />
-</div>
+</div> 
 
 ## 🚀 About Me
 
