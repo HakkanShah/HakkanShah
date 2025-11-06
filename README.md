@@ -10,9 +10,9 @@
 
 ## 🚀 About Me
 
-- 🧠 **MERN Stack Developer & DSA Enthusiast**  
-- 💡 Always exploring creative and fun project ideas  
-- 🛠️ Currently building - [**MockHick**](https://mockhick.vercel.app/)  
+- 🛠️ Currently building - [**MockHick**](https://mockhick.vercel.app/) 
+- 🧠 MERN Stack Developer & DSA Enthusiast  
+- 💡 Always exploring creative and fun project ideas   
 - 🎨 Part-time Meme Crafter with a wild imagination  
 - 📫 Let’s connect: **hakkanparbej@gmail.com**
 
