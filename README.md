@@ -12,7 +12,7 @@
 
 - 🧠 **MERN Stack Developer & DSA Enthusiast**  
 - 💡 Always exploring creative and fun project ideas  
-- 🛠️ Currently building - [**MockHick**](https://mockhick.vercel.app/) | [Visit Repo](https://github.com/HakkanShah/mockhick)  
+- 🛠️ Currently building - [**MockHick**](https://mockhick.vercel.app/)  
 - 🎨 Part-time Meme Crafter with a wild imagination  
 - 📫 Let’s connect: **hakkanparbej@gmail.com**
 
