@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"> Hi, I'm Hakkan
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Hakkan+Parbej+Shah&fontSize=80&fontAlignY=25&animation=twinkling&desc=Full+Stack+Developer+%7C+MERN+%7C+NEXTJS&descSize=40&descAlignY=51" />
 
 <div align="center">
   <img 
