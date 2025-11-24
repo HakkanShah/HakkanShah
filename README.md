@@ -1,8 +1,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Hakkan+Parbej+Shah&fontSize=80&fontAlignY=25&animation=twinkling&desc=Full+Stack+Developer+%7C+MERN+%7C+NEXTJS&descSize=40&descAlignY=51" />
 
 <div align="center">
-  <img 
-    src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNjFieGZvMmprYWJtazE3bG94a3VmazF5cDV2dHlmNGltdm10eWR0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/93X7kOOzkrd2eQvFnX/giphy.gif" 
+  <img   src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyNjFieGZvMmprYWJtazE3bG94a3VmazF5cDV2dHlmNGltdm10eWR0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/93X7kOOzkrd2eQvFnX/giphy.gif" 
     width="100%" 
     style="border-radius: 15px;" 
   />
