@@ -4,11 +4,11 @@
 
 👋 **Hi there! I'm Hakkan.**
 
-I'm a **Full Stack Developer** passionate about building robust web applications using the **MERN Stack** and **Next.js**. I enjoy solving algorithmic challenges and exploring new technologies.
+I'm a **Full Stack Developer** who loves crafting scalable, user-focused web applications with the **MERN Stack** and **Next.js**.
 
-- 🛠️ **Currently working on:** [**MockHick**](https://mockhick.vercel.app/)
-- 🧠 **Sharpening my skills in:** Data Structures & Algorithms
-- 💡 **Always open to:** Creative and fun project ideas
+- 🛠️ **Currently working in:** [**AIKing Solutions**](https://aikingsolutions.com/) as a **React & Next.js Developer Intern**, actively building [**jobformautomator.com**](https://jobformautomator.com/) 
+- 🧠 **Sharpening my skills in:** Data Structures & Algorithms  
+- 💡 **Always open to:** Creative and experimental project ideas  
 - 🎨 **Fun fact:** Part-time Meme Crafter with a wild imagination
 
 <div align="center">
