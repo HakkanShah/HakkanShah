@@ -6,7 +6,7 @@
 
 I'm a **Full Stack Developer** who loves crafting scalable, user-focused web applications with the **MERN Stack** and **Next.js**.
 
-- 👨‍💻**Currently working in:** [**AIKing Solutions**](https://aikingsolutions.com/) as a **React & Next.js Developer Intern**. 
+- 👨‍💻**Currently working in:** [**AIKing Solutions**](https://aikingsolutions.com/) as a **React & Next.js Developer Intern**
 - 🛠️**Actively building** [**jobformautomator.com**](https://jobformautomator.com/) 
 - 🧠 **Sharpening my skills in:** Data Structures & Algorithms  
 - 💡 **Always open to:** Creative and experimental project ideas  
