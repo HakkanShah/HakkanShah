@@ -1,122 +1,207 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Hakkan+Parbej+Shah&fontSize=80&fontAlignY=25&animation=twinkling&desc=Full+Stack+Developer+%7C+MERN+%7C+NEXTJS&descSize=40&descAlignY=51" />
 
-## 🚀 About Me
-
-👋 **Hi there! I'm Hakkan.**
-
-I'm a **Full Stack Developer** who loves crafting scalable, user-focused web applications with the **MERN Stack** and **Next.js**.
-
-- 👨‍💻**Currently working in:** [**AIKing Solutions**](https://aikingsolutions.com/) as a **React & Next.js Developer Intern**
-- 🛠️**Actively building** [**jobformautomator.com**](https://jobformautomator.com/) 
-- 🧠 **Sharpening my skills in:** Data Structures & Algorithms  
-- 💡 **Always open to:** Creative and experimental project ideas  
-- 🎨 **Fun fact:** Part-time Meme Crafter with a wild imagination
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Hakkan+Parbej+Shah&fontSize=80&fontAlignY=25&animation=twinkling&desc=Full+Stack+AI+Engineer+%7C+Next.js+%7C+AI+Systems&descSize=38&descAlignY=51"/>
 
 <div align="center">
+
+# 👋 Hi, I'm Hakkan Shah
+
+### Full Stack AI Engineer • Next.js • MERN • AI Agents • AI Automations
+
+Building AI-first applications, desktop agents, automation tools, and scalable web platforms.
+
+[🌐 Portfolio](https://hakkan.is-a.dev) •
+[🏢 Persist Portfolio](https://hakkan.persist.org) •
+[📄 Resume](https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf) •
+[💼 LinkedIn](https://linkedin.com/in/Hakkan)
+
+</div>
+
+---
+
+# 🚀 About Me
+
+I'm a **Full Stack AI Engineer** passionate about building production-grade AI products that combine modern web technologies with LLMs, automation, and intelligent user experiences.
+
+Currently working remotely at [**Persist Ventures**](https://persist.org), where I build and maintain AI-powered products used in production.
+
+### 🔭 Currently Working On
+
+- 🎓 [**OHM School**](https://ohmschool.org) — AI-powered personalized learning platform featuring adaptive learning, AI tutor (Ollie), mastery tracking, assessments, and intelligent recommendations.
   
-  [**🌐 Portfolio**](https://hakkan.is-a.dev/) • [**📄 Resume**](https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf) • [**📫 Email**](mailto:hakkanparbej@gmail.com)
-
-</div>
-
----
-## 🛠️ Tech Toolbox
-
-### 💻 Programming Languages
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+- 🤖 **Aura Desktop** — AI desktop assistant with voice interaction, desktop automation, browser automation, and multi-provider LLM support.
+  
+- ⚡ Building scalable products using **Next.js, React, TypeScript, Node.js, Supabase, Firebase, and AI APIs.**
+- 🧠 Exploring **AI Agents, MCP, RAG, LLM Workflows, Desktop Automation & System Design.**
+- 📚 Practicing **Data Structures & Algorithms** to strengthen problem-solving skills.
 
 ---
 
-### 🌐 Frontend Development
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+# 🚀 Featured Projects
+
+| Project | Description |
+|---------|-------------|
+| 🎓 [**OHM School**](https://ohmschool.org) | AI-powered Personalized Learning Platform for adaptive education |
+| 🌐 [**Portfolio**](https://hakkan.is-a.dev) | Interactive terminal-style developer portfolio |
+| 🟢 [**CommitHabit**](https://commithabit.vercel.app) | Automation tool for GitHub contribution streak  |
 
 ---
 
-### 🔙 Backend & APIs
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+# ⚡ Tech Stack
+
+<table>
+
+<tr>
+
+<td valign="top" width="25%">
+
+### 💻 Languages
+
+<img src="https://skillicons.dev/icons?i=java,ts,js,python,c"/>
+
+</td>
+
+<td valign="top" width="25%">
+
+### 🎨 Frontend
+
+<img src="https://skillicons.dev/icons?i=nextjs,react,tailwind,html,css"/>
+
+<br><br>
+
+![Shadcn UI](https://img.shields.io/badge/Shadcn_UI-black?style=for-the-badge)
+
+</td>
+
+</tr>
+
+<tr>
+
+<td valign="top" width="25%">
+
+### ⚙ Backend
+
+<img src="https://skillicons.dev/icons?i=nodejs,express"/>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/REST_API-02569B?style=for-the-badge"/>
+
+</td>
+
+<td valign="top" width="25%">
+
+### 🗄 Database
+
+<img src="https://skillicons.dev/icons?i=mongodb,postgres,mysql,redis,firebase,supabase"/>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td valign="top" width="25%">
+
+### ☁ Cloud & DevOps
+
+<img src="https://skillicons.dev/icons?i=git,github,docker,vercel,netlify"/>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black"/>
+
+</td>
+
+<td valign="top" width="25%">
+
+### 🤖 AI & LLMs
+
+<img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
+
+<img src="https://img.shields.io/badge/Anthropic-Claude-D97757?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Groq-F55036?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/NVIDIA_NIM-76B900?style=for-the-badge&logo=nvidia&logoColor=white"/>
+
+</td>
+
+</tr>
+
+</table>
 
 ---
 
-### 🗄️ Databases & Cloud
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
-
----
-
-### ⚙️ Tools, Concepts & Practices
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-
-![OOP](https://img.shields.io/badge/Object_Oriented_Programming-FF6F00?style=for-the-badge)
-![DSA](https://img.shields.io/badge/Data_Structures_&_Algorithms-000000?style=for-the-badge)
-
----
-
-### 🤖 AI & Applied Intelligence
-![OpenAI](https://img.shields.io/badge/OpenAI_APIs-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Google_Gemini_APIs-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine_Learning-Basic-102230?style=for-the-badge)
-
-
----
-
-## 📈 GitHub Activity
+# 📈 GitHub Activity
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=HakkanShah&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=HakkanShah&theme=tokyonight&hide_border=true" width="48%" />
-</div>
 
-<br>
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=HakkanShah&show_icons=true&theme=tokyonight&hide_border=true"/>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HakkanShah&layout=compact&theme=tokyonight&hide_border=true" width="100%" />
+<img height="170" src="https://github-readme-streak-stats.herokuapp.com?user=HakkanShah&theme=tokyonight&hide_border=true"/>
+
+<br><br>
+
+<img width="70%" src="https://github-readme-activity-graph.vercel.app/graph?username=HakkanShah&theme=tokyo-night&hide_border=true"/>
+
+<br><br>
+
+<img width="55%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HakkanShah&layout=compact&theme=tokyonight&hide_border=true"/>
+
 </div>
 
 ---
 
-## 🤝 Let's Connect
+# 🏆 What I Enjoy Building
+
+- 🤖 AI Agents & Autonomous Workflows
+- 🖥 Desktop Applications (Electron)
+- 🌐 Full Stack Web Applications
+- 🧠 AI-powered Education Platforms
+- ⚡ Developer Productivity Tools
+- 🎙 Voice Interfaces
+- 🔍 RAG & Knowledge Systems
+- 🎨 Premium UI/UX Experiences
+- 🚀 Performance Optimization
+
+---
+
+# 🤝 Let's Connect
 
 <p align="center">
-  <a href="https://hakkan.is-a.dev/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf" target="_blank">
-    <img src="https://img.shields.io/badge/Resume-4CAF50?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Resume" />
-  </a>
-  <a href="https://linkedin.com/in/Hakkan" target="_blank">
-    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://twitter.com/HakkanShah" target="_blank">
-    <img src="https://img.shields.io/badge/-Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
-  </a>
-  <a href="https://github.com/HakkanShah" target="_blank">
-    <img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
+
+<a href="https://hakkan.is-a.dev">
+<img src="https://img.shields.io/badge/🌐_Portfolio-000000?style=for-the-badge"/>
+</a>
+
+<a href="https://hakkan.persist.org">
+<img src="https://img.shields.io/badge/🏢_Persist_Portfolio-5B5BD6?style=for-the-badge"/>
+</a>
+
+<a href="mailto:hakkanparbej@gmail.com">
+<img src="https://img.shields.io/badge/📧_Email-EA4335?style=for-the-badge"/>
+</a>
+
+<a href="https://linkedin.com/in/Hakkan">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="https://github.com/HakkanShah">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+</a>
+
 </p>
 
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=HakkanShah&label=Profile%20Views&color=brightgreen&style=flat" alt="Profile Views" />
-  <p>
-    <br>
-    <img src="https://media.giphy.com/media/NX3tbtZxVr44rySrCO/giphy.gif" width="100%"/>
-  </p>
+
+<img src="https://komarev.com/ghpvc/?username=HakkanShah&label=Profile+Views&color=blueviolet&style=for-the-badge"/>
+
+<br><br>
+
+*"Code. Build. Learn. Ship. Repeat."* 🚀
+
 </div>
