@@ -109,10 +109,12 @@ flowchart LR
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=HakkanShah&show_icons=true&bg_color=060D14&title_color=38BDF8&icon_color=38BDF8&text_color=9CC2D8&border_color=2A5A7D&border_radius=0">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=HakkanShah&show_icons=true&bg_color=F1F6FA&title_color=0B6FA4&icon_color=0B6FA4&text_color=2C4A5E&border_color=8FB0C7&border_radius=0">
-  <img height="170" alt="Hakkan's GitHub statistics" src="https://github-readme-stats.vercel.app/api?username=HakkanShah&show_icons=true&bg_color=060D14&title_color=38BDF8&icon_color=38BDF8&text_color=9CC2D8&border_color=2A5A7D&border_radius=0">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/metrics-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/metrics-light.svg">
+  <img width="78%" alt="Hakkan's GitHub statistics and most used languages" src="assets/metrics-dark.svg">
 </picture>
+
+<br><br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=HakkanShah&background=060D14&border=2A5A7D&stroke=2A5A7D&ring=38BDF8&fire=38BDF8&currStreakNum=DCEBF7&sideNums=DCEBF7&currStreakLabel=38BDF8&sideLabels=9CC2D8&dates=5B87A3&border_radius=0">
@@ -126,14 +128,6 @@ flowchart LR
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=HakkanShah&bg_color=060D14&color=9CC2D8&title_color=38BDF8&line=38BDF8&point=DCEBF7&area=true&area_color=38BDF8&hide_border=true">
   <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=HakkanShah&bg_color=F1F6FA&color=2C4A5E&title_color=0B6FA4&line=0B6FA4&point=0C2436&area=true&area_color=0B6FA4&hide_border=true">
   <img width="78%" alt="Hakkan's contribution activity over the past year" src="https://github-readme-activity-graph.vercel.app/graph?username=HakkanShah&bg_color=060D14&color=9CC2D8&title_color=38BDF8&line=38BDF8&point=DCEBF7&area=true&area_color=38BDF8&hide_border=true">
-</picture>
-
-<br><br>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=HakkanShah&layout=compact&bg_color=060D14&title_color=38BDF8&text_color=9CC2D8&border_color=2A5A7D&border_radius=0">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=HakkanShah&layout=compact&bg_color=F1F6FA&title_color=0B6FA4&text_color=2C4A5E&border_color=8FB0C7&border_radius=0">
-  <img width="55%" alt="Hakkan's most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HakkanShah&layout=compact&bg_color=060D14&title_color=38BDF8&text_color=9CC2D8&border_color=2A5A7D&border_radius=0">
 </picture>
 
 </div>
