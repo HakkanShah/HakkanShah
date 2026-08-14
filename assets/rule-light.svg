@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="22" viewBox="0 0 1200 22" role="presentation" aria-hidden="true">
+  <g stroke="#8FB0C7" stroke-width="1" fill="none">
+    <path d="M6 3v16M1194 3v16"/>
+    <path d="M6 11h580M614 11h580"/>
+  </g>
+  <polygon points="6,11 22,5 22,17" fill="#8FB0C7"/>
+  <polygon points="1194,11 1178,5 1178,17" fill="#8FB0C7"/>
+  <path d="M600 3l8 8-8 8-8-8z" fill="none" stroke="#0B6FA4" stroke-width="1.25"/>
+</svg>

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Hakkan Parbej Shah — Full Stack AI Engineer. Next.js, MERN, AI Agents, AI Automations.">
+  <title>Hakkan Parbej Shah — Full Stack AI Engineer</title>
+
+  <defs>
+    <pattern id="gridMinor" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0v20" fill="none" stroke="#102436" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridMajor" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M100 0H0v100" fill="none" stroke="#17364E" stroke-width="1"/>
+    </pattern>
+    <pattern id="tickTop" width="24" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 0v7" stroke="#1D4363" stroke-width="1"/>
+    </pattern>
+    <pattern id="tickBottom" width="24" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 12v-7" stroke="#1D4363" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="340" fill="#060D14"/>
+  <rect width="1200" height="340" fill="url(#gridMinor)"/>
+  <rect width="1200" height="340" fill="url(#gridMajor)"/>
+
+  <g font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace">
+
+    <!-- registration / crop marks -->
+    <g stroke="#38BDF8" stroke-width="1.5" fill="none">
+      <path d="M10 24h14M24 10v14"/>
+      <path d="M1190 24h-14M1176 10v14"/>
+      <path d="M10 316h14M24 330v-14"/>
+      <path d="M1190 316h-14M1176 330v-14"/>
+    </g>
+
+    <!-- drawing border, drawn in on load -->
+    <rect x="24" y="24" width="1152" height="292" fill="none" stroke="#2A5A7D" stroke-width="1.25"
+          stroke-dasharray="2888" stroke-dashoffset="2888">
+      <animate attributeName="stroke-dashoffset" values="2888;0" dur="1.6s" fill="freeze"
+               calcMode="spline" keyTimes="0;1" keySplines="0.16 1 0.3 1"/>
+    </rect>
+
+    <!-- ruler ticks inside the border -->
+    <rect x="24" y="25" width="1152" height="12" fill="url(#tickTop)" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.05s" fill="freeze"/>
+    </rect>
+    <rect x="24" y="304" width="1152" height="12" fill="url(#tickBottom)" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="1.05s" fill="freeze"/>
+    </rect>
+
+    <!-- eyebrow -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.7s" begin="0.30s" fill="freeze"/>
+      <text x="72" y="90" font-size="11" letter-spacing="3.5" fill="#5B87A3">GITHUB PROFILE &#183; TECHNICAL SHEET</text>
+    </g>
+
+    <!-- name -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.45s" fill="freeze"/>
+      <text x="72" y="152" font-size="54" font-weight="700" letter-spacing="7" fill="#DCEBF7">HAKKAN PARBEJ SHAH</text>
+    </g>
+
+    <!-- dimension line under the name -->
+    <g opacity="0" stroke="#2A5A7D" stroke-width="1" fill="none">
+      <animate attributeName="opacity" values="0;1" dur="0.6s" begin="0.95s" fill="freeze"/>
+      <path d="M72 174v28M790 174v28"/>
+      <path d="M72 188h718"/>
+      <polygon points="72,188 86,182 86,194" fill="#2A5A7D" stroke="none"/>
+      <polygon points="790,188 776,182 776,194" fill="#2A5A7D" stroke="none"/>
+      <rect x="382" y="178" width="98" height="20" fill="#060D14" stroke="none"/>
+      <text x="431" y="192" font-size="10" letter-spacing="2.5" fill="#5B87A3" text-anchor="middle" stroke="none">SCALE 1:1</text>
+    </g>
+
+    <!-- role -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.7s" begin="1.15s" fill="freeze"/>
+      <text x="72" y="228" font-size="17" letter-spacing="4" fill="#38BDF8">FULL STACK AI ENGINEER</text>
+      <text x="72" y="258" font-size="12" letter-spacing="2.2" fill="#5B87A3">NEXT.JS &#183; MERN &#183; AI AGENTS &#183; AI AUTOMATIONS</text>
+    </g>
+
+    <!-- title block -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="0.7s" begin="1.35s" fill="freeze"/>
+      <g fill="none" stroke="#2A5A7D" stroke-width="1">
+        <rect x="856" y="196" width="320" height="120"/>
+        <path d="M856 236h320M856 276h320M976 196v120"/>
+      </g>
+      <g font-size="9" letter-spacing="1.6" fill="#5B87A3">
+        <text x="868" y="221">DRAWN BY</text>
+        <text x="868" y="261">SHEET</text>
+        <text x="868" y="301">REVISION</text>
+      </g>
+      <g font-size="13" fill="#DCEBF7">
+        <text x="990" y="222">HAKKAN SHAH</text>
+        <text x="990" y="262">01 OF 01</text>
+        <text x="990" y="302">2.0</text>
+      </g>
+      <text x="1148" y="302" font-size="9" letter-spacing="1.6" fill="#38BDF8" text-anchor="end">ACTIVE</text>
+      <circle cx="1162" cy="298" r="4" fill="#38BDF8">
+        <animate attributeName="opacity" values="1;0.15;1" dur="1.9s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+  </g>
+</svg>
