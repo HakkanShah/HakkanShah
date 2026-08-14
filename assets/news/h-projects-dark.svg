@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="62" viewBox="0 0 1200 62" role="img" aria-label="FEATURED PROJECTS">
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+    <text x="2" y="30" font-size="21" font-weight="700" letter-spacing="5" fill="#EDE7DA">FEATURED PROJECTS</text>
+    <text x="1198" y="30" font-size="11" letter-spacing="3" fill="#C9564B" text-anchor="end">SECTION 02</text>
+  </g>
+  <g stroke="#EDE7DA" fill="none">
+    <path d="M0 46h1200" stroke-width="2.5"/>
+    <path d="M0 52h1200" stroke-width="0.75"/>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Hakkan Parbej Shah — Full Stack AI Engineer. Next.js, MERN, AI Agents, AI Automations.">
+  <title>Hakkan Parbej Shah — Full Stack AI Engineer</title>
+
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="300" fill="#F7F4EC"/>
+  <rect width="1200" height="300" filter="url(#grain)" opacity="0.05"/>
+
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+
+    <!-- folio line -->
+    <text x="40" y="44" font-size="11" letter-spacing="3" fill="#6B6355">VOL. I &#8212; NO. 1</text>
+    <text x="600" y="44" font-size="11" letter-spacing="3" fill="#6B6355" text-anchor="middle">PORTFOLIO EDITION</text>
+    <text x="1160" y="44" font-size="11" letter-spacing="3" fill="#6B6355" text-anchor="end">REMOTE</text>
+    <path d="M40 56h1120" stroke="#14110C" stroke-width="0.75" fill="none"/>
+
+    <!-- nameplate -->
+    <text x="600" y="158" font-size="64" font-weight="700" letter-spacing="2" fill="#14110C" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">HAKKAN PARBEJ SHAH</text>
+
+    <!-- double rule -->
+    <g stroke="#14110C" fill="none">
+      <path d="M40 192h1120" stroke-width="2.5"/>
+      <path d="M40 198h1120" stroke-width="0.75"/>
+    </g>
+
+    <!-- deck -->
+    <text x="600" y="230" font-size="17" font-style="italic" fill="#14110C" text-anchor="middle">Full Stack AI Engineer &#183; Next.js &#183; MERN &#183; AI Agents &#183; AI Automations</text>
+
+    <path d="M40 252h1120" stroke="#14110C" stroke-width="0.75" fill="none"/>
+
+    <!-- slogan -->
+    <text x="600" y="276" font-size="11" letter-spacing="4.5" fill="#A8322D" text-anchor="middle">CODE. BUILD. LEARN. SHIP. REPEAT.</text>
+
+    <path d="M40 288h1120" stroke="#14110C" stroke-width="0.75" fill="none"/>
+
+  </g>
+</svg>
