@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350" role="img" aria-label="Let's Connect">
+  <defs>
+    <filter id="g" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="350" fill="#12100B"/>
+  <rect width="1200" height="350" filter="url(#g)" opacity="0.06"/>
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+    
+    <text x="40" y="38" font-size="10" letter-spacing="3" fill="#C9564B">SECTION 06</text>
+    <text x="40" y="84" font-size="38" font-weight="700" letter-spacing="1" fill="#EDE7DA">LET'S CONNECT</text>
+    <g stroke="#EDE7DA" fill="none">
+      <path d="M40 102h1120" stroke-width="2.5"/>
+      <path d="M40 108h1120" stroke-width="0.75"/>
+    </g>
+    <text x="40" y="142" font-size="10" letter-spacing="3" fill="#9A917F">CHANNEL</text>
+    <text x="340" y="142" font-size="10" letter-spacing="3" fill="#9A917F">ADDRESS</text>
+    <path d="M40 152h1120" stroke="#EDE7DA" stroke-width="0.75" fill="none"/>
+    <text x="40" y="176" font-size="15" font-weight="700" fill="#EDE7DA">Portfolio</text>
+    <text x="340" y="176" font-size="15" fill="#C9564B">hakkan.is-a.dev</text>
+    <path d="M40 188h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+    <text x="40" y="210" font-size="15" font-weight="700" fill="#EDE7DA">Persist Portfolio</text>
+    <text x="340" y="210" font-size="15" fill="#C9564B">hakkan.persist.org</text>
+    <path d="M40 222h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+    <text x="40" y="244" font-size="15" font-weight="700" fill="#EDE7DA">Email</text>
+    <text x="340" y="244" font-size="15" fill="#C9564B">hakkanparbej@gmail.com</text>
+    <path d="M40 256h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+    <text x="40" y="278" font-size="15" font-weight="700" fill="#EDE7DA">LinkedIn</text>
+    <text x="340" y="278" font-size="15" fill="#C9564B">linkedin.com/in/Hakkan</text>
+    <path d="M40 290h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+    <text x="40" y="312" font-size="15" font-weight="700" fill="#EDE7DA">GitHub</text>
+    <text x="340" y="312" font-size="15" fill="#C9564B">github.com/HakkanShah</text>
+    <path d="M40 324h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+  </g>
+</svg>

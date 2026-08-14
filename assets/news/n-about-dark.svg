@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="274" viewBox="0 0 1200 274" role="img" aria-label="About Me">
+  <defs>
+    <filter id="g" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="274" fill="#12100B"/>
+  <rect width="1200" height="274" filter="url(#g)" opacity="0.06"/>
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+    
+    <text x="40" y="38" font-size="10" letter-spacing="3" fill="#C9564B">SECTION 01</text>
+    <text x="40" y="84" font-size="38" font-weight="700" letter-spacing="1" fill="#EDE7DA">ABOUT ME</text>
+    <g stroke="#EDE7DA" fill="none">
+      <path d="M40 102h1120" stroke-width="2.5"/>
+      <path d="M40 108h1120" stroke-width="0.75"/>
+    </g>
+    <text x="40" y="138" font-size="13" font-style="italic" fill="#9A917F">By Hakkan Parbej Shah &#183; Persist Ventures &#183; Remote</text>
+    <text x="86.0" y="172.0" font-size="15" fill="#EDE7DA" textLength="304.7" lengthAdjust="spacing">'m a Full Stack AI Engineer passionate about</text>
+    <text x="86.0" y="194.0" font-size="15" fill="#EDE7DA" textLength="304.7" lengthAdjust="spacing">building production-grade AI products that</text>
+    <text x="86.0" y="216.0" font-size="15" fill="#EDE7DA">combine modern web technologies with</text>
+    <text x="424.7" y="172.0" font-size="15" fill="#EDE7DA">LLMs, automation, and intelligent user experiences.</text>
+    
+    <text x="424.7" y="216.0" font-size="15" fill="#EDE7DA">Currently working remotely at Persist</text>
+    <text x="809.3" y="172.0" font-size="15" fill="#EDE7DA">Ventures, where I build and maintain</text>
+    <text x="809.3" y="194.0" font-size="15" fill="#EDE7DA">AI-powered products used in production.</text>
+    <text x="40" y="212" font-size="62" font-weight="700" fill="#C9564B">I</text>
+    <path d="M407.6666666666667 156v74" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.6"/>
+    <path d="M792.3333333333334 156v74" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.6"/>
+  </g>
+</svg>

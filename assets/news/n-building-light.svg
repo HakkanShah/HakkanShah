@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="276" viewBox="0 0 1200 276" role="img" aria-label="What I Enjoy Building">
+  <defs>
+    <filter id="g" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="276" fill="#F7F4EC"/>
+  <rect width="1200" height="276" filter="url(#g)" opacity="0.05"/>
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+    
+    <text x="40" y="38" font-size="10" letter-spacing="3" fill="#A8322D">SECTION 05</text>
+    <text x="40" y="84" font-size="38" font-weight="700" letter-spacing="1" fill="#14110C">WHAT I ENJOY BUILDING</text>
+    <g stroke="#14110C" fill="none">
+      <path d="M40 102h1120" stroke-width="2.5"/>
+      <path d="M40 108h1120" stroke-width="0.75"/>
+    </g>
+    <rect x="40" y="139" width="7" height="7" fill="#A8322D"/>
+    <text x="56" y="148" font-size="15" fill="#14110C">AI Agents &amp; Autonomous Workflows</text>
+    <rect x="40" y="177" width="7" height="7" fill="#A8322D"/>
+    <text x="56" y="186" font-size="15" fill="#14110C">Desktop Applications (Electron)</text>
+    <rect x="40" y="215" width="7" height="7" fill="#A8322D"/>
+    <text x="56" y="224" font-size="15" fill="#14110C">Full Stack Web Applications</text>
+    <rect x="424.6666666666667" y="139" width="7" height="7" fill="#A8322D"/>
+    <text x="440.6666666666667" y="148" font-size="15" fill="#14110C">AI-powered Education Platforms</text>
+    <rect x="424.6666666666667" y="177" width="7" height="7" fill="#A8322D"/>
+    <text x="440.6666666666667" y="186" font-size="15" fill="#14110C">Developer Productivity Tools</text>
+    <rect x="424.6666666666667" y="215" width="7" height="7" fill="#A8322D"/>
+    <text x="440.6666666666667" y="224" font-size="15" fill="#14110C">Voice Interfaces</text>
+    <rect x="809.3333333333334" y="139" width="7" height="7" fill="#A8322D"/>
+    <text x="825.3333333333334" y="148" font-size="15" fill="#14110C">RAG &amp; Knowledge Systems</text>
+    <rect x="809.3333333333334" y="177" width="7" height="7" fill="#A8322D"/>
+    <text x="825.3333333333334" y="186" font-size="15" fill="#14110C">Premium UI/UX Experiences</text>
+    <rect x="809.3333333333334" y="215" width="7" height="7" fill="#A8322D"/>
+    <text x="825.3333333333334" y="224" font-size="15" fill="#14110C">Performance Optimization</text>
+    <path d="M407.6666666666667 122v126" stroke="#6B6355" stroke-width="0.5" fill="none" opacity="0.6"/>
+    <path d="M792.3333333333334 122v126" stroke="#6B6355" stroke-width="0.5" fill="none" opacity="0.6"/>
+  </g>
+</svg>

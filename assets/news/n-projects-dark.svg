@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="364" viewBox="0 0 1200 364" role="img" aria-label="Featured Projects">
+  <defs>
+    <filter id="g" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="364" fill="#12100B"/>
+  <rect width="1200" height="364" filter="url(#g)" opacity="0.06"/>
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+    
+    <text x="40" y="38" font-size="10" letter-spacing="3" fill="#C9564B">SECTION 02</text>
+    <text x="40" y="84" font-size="38" font-weight="700" letter-spacing="1" fill="#EDE7DA">FEATURED PROJECTS</text>
+    <g stroke="#EDE7DA" fill="none">
+      <path d="M40 102h1120" stroke-width="2.5"/>
+      <path d="M40 108h1120" stroke-width="0.75"/>
+    </g>
+    <text x="40" y="140" font-size="10" letter-spacing="3" fill="#9A917F">PROJECT</text>
+    <text x="340" y="140" font-size="10" letter-spacing="3" fill="#9A917F">DESCRIPTION</text>
+    <path d="M40 150h1120" stroke="#EDE7DA" stroke-width="0.75" fill="none"/>
+    <text x="40" y="178" font-size="17" font-weight="700" fill="#EDE7DA">OHM School</text>
+    <text x="40" y="198" font-size="11" font-style="italic" fill="#C9564B">ohmschool.org</text>
+    <text x="340.0" y="178.0" font-size="15" fill="#EDE7DA">AI-powered Personalized Learning Platform for adaptive education</text>
+    <path d="M40 224h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+    <text x="40" y="238" font-size="17" font-weight="700" fill="#EDE7DA">Portfolio</text>
+    <text x="40" y="258" font-size="11" font-style="italic" fill="#C9564B">hakkan.is-a.dev</text>
+    <text x="340.0" y="238.0" font-size="15" fill="#EDE7DA">Interactive terminal-style developer portfolio</text>
+    <path d="M40 284h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+    <text x="40" y="298" font-size="17" font-weight="700" fill="#EDE7DA">CommitHabit</text>
+    <text x="40" y="318" font-size="11" font-style="italic" fill="#C9564B">commithabit.vercel.app</text>
+    <text x="340.0" y="298.0" font-size="15" fill="#EDE7DA">Automation tool for GitHub contribution streak</text>
+    <path d="M40 344h1120" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.7"/>
+  </g>
+</svg>

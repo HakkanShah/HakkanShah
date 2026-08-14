@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="282" viewBox="0 0 1200 282" role="img" aria-label="Currently Working On">
+  <defs>
+    <filter id="g" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="282" fill="#12100B"/>
+  <rect width="1200" height="282" filter="url(#g)" opacity="0.06"/>
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+    
+    <text x="40" y="34" font-size="10" letter-spacing="3" fill="#C9564B">CURRENTLY WORKING ON</text>
+    <g stroke="#EDE7DA" fill="none">
+      <path d="M40 46h1120" stroke-width="1.5"/>
+    </g>
+    <rect x="40" y="62" width="7" height="7" fill="#C9564B"/>
+    <text x="56" y="72" font-size="14" font-weight="700" letter-spacing="0.6" fill="#EDE7DA">OHM SCHOOL</text>
+    <text x="178.5" y="72.0" font-size="14" fill="#EDE7DA" textLength="401.5" lengthAdjust="spacing">AI-powered personalized learning platform featuring adaptive</text>
+    <text x="56.0" y="92.0" font-size="14" fill="#EDE7DA">learning, AI tutor (Ollie), mastery tracking, assessments, and intelligent</text>
+    <text x="56.0" y="112.0" font-size="14" fill="#EDE7DA">recommendations.</text>
+    <rect x="40" y="142" width="7" height="7" fill="#C9564B"/>
+    <text x="56" y="152" font-size="14" font-weight="700" letter-spacing="0.6" fill="#EDE7DA">AURA DESKTOP</text>
+    <text x="198.7" y="152.0" font-size="14" fill="#EDE7DA">AI desktop assistant with voice interaction, desktop</text>
+    <text x="56.0" y="172.0" font-size="14" fill="#EDE7DA">automation, browser automation, and multi-provider LLM support.</text>
+    <rect x="40" y="202" width="7" height="7" fill="#C9564B"/>
+    <text x="56" y="212" font-size="14" font-weight="700" letter-spacing="0.6" fill="#EDE7DA">BUILDING SCALABLE PRODUCTS</text>
+    <text x="340.9" y="212.0" font-size="14" fill="#EDE7DA">using Next.js, React, TypeScript,</text>
+    <text x="56.0" y="232.0" font-size="14" fill="#EDE7DA">Node.js, Supabase, Firebase, and AI APIs.</text>
+    <rect x="620" y="62" width="7" height="7" fill="#C9564B"/>
+    <text x="636" y="72" font-size="14" font-weight="700" letter-spacing="0.6" fill="#EDE7DA">EXPLORING</text>
+    <text x="745.3" y="72.0" font-size="14" fill="#EDE7DA" textLength="414.7" lengthAdjust="spacing">AI Agents, MCP, RAG, LLM Workflows, Desktop Automation &amp;</text>
+    <text x="636.0" y="92.0" font-size="14" fill="#EDE7DA">System Design.</text>
+    <rect x="620" y="122" width="7" height="7" fill="#C9564B"/>
+    <text x="636" y="132" font-size="14" font-weight="700" letter-spacing="0.6" fill="#EDE7DA">PRACTICING</text>
+    <text x="751.0" y="132.0" font-size="14" fill="#EDE7DA" textLength="409.0" lengthAdjust="spacing">Data Structures &amp; Algorithms to strengthen problem-solving</text>
+    <text x="636.0" y="152.0" font-size="14" fill="#EDE7DA">skills.</text>
+    <path d="M600 48v200" stroke="#9A917F" stroke-width="0.5" fill="none" opacity="0.6"/>
+  </g>
+</svg>

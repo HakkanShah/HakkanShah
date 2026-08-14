@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="122" viewBox="0 0 1200 122" role="img" aria-label="Code. Build. Learn. Ship. Repeat.">
+  <defs>
+    <filter id="g" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="122" fill="#F7F4EC"/>
+  <rect width="1200" height="122" filter="url(#g)" opacity="0.05"/>
+  <g font-family="Georgia,'Times New Roman','Liberation Serif',serif">
+    
+    <g stroke="#14110C" fill="none">
+      <path d="M40 18h1120" stroke-width="2.5"/>
+      <path d="M40 24h1120" stroke-width="0.75"/>
+    </g>
+    <text x="600" y="64" font-size="20" font-style="italic" fill="#14110C" text-anchor="middle">&#8220;Code. Build. Learn. Ship. Repeat.&#8221;</text>
+    <text x="600" y="92" font-size="10" letter-spacing="3" fill="#6B6355" text-anchor="middle">HAKKAN PARBEJ SHAH &#183; FULL STACK AI ENGINEER &#183; END OF EDITION</text>
+    <path d="M40 108h1120" stroke="#14110C" stroke-width="0.75" fill="none"/>
+  </g>
+</svg>

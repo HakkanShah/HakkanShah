@@ -1,73 +1,48 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/news/masthead-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/news/masthead-light.svg">
-  <img alt="Hakkan Parbej Shah — Full Stack AI Engineer | Next.js | AI Systems" src="assets/news/masthead-light.svg" width="100%">
+  <img alt="Hakkan Parbej Shah — Full Stack AI Engineer · Next.js · MERN · AI Agents · AI Automations" src="assets/news/masthead-light.svg" width="100%">
 </picture>
 
 <div align="center">
 
-### Hi, I'm Hakkan Shah
-
-**Full Stack AI Engineer • Next.js • MERN • AI Agents • AI Automations**
-
-Building AI-first applications, desktop agents, automation tools, and scalable web platforms.
-
 <a href="https://hakkan.is-a.dev">Portfolio</a> &nbsp;·&nbsp;
 <a href="https://hakkan.persist.org">Persist Portfolio</a> &nbsp;·&nbsp;
 <a href="https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf">Resume</a> &nbsp;·&nbsp;
-<a href="https://linkedin.com/in/Hakkan">LinkedIn</a>
+<a href="https://linkedin.com/in/Hakkan">LinkedIn</a> &nbsp;·&nbsp;
+<a href="mailto:hakkanparbej@gmail.com">Email</a> &nbsp;·&nbsp;
+<a href="https://github.com/HakkanShah">GitHub</a>
 
 </div>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/news/h-about-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/news/h-about-light.svg">
-  <img alt="About Me" src="assets/news/h-about-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-about-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-about-light.svg">
+  <img alt="About Me — I'm a Full Stack AI Engineer passionate about building production-grade AI products that combine modern web technologies with LLMs, automation, and intelligent user experiences. Currently working remotely at Persist Ventures, where I build and maintain AI-powered products used in production." src="assets/news/n-about-light.svg" width="100%">
 </picture>
 
-> I'm a **Full Stack AI Engineer** passionate about building production-grade AI products that combine modern web technologies with LLMs, automation, and intelligent user experiences.
-
-Currently working remotely at [**Persist Ventures**](https://persist.org), where I build and maintain AI-powered products used in production.
-
-#### Currently Working On
-
-- [**OHM School**](https://ohmschool.org) — AI-powered personalized learning platform featuring adaptive learning, AI tutor (Ollie), mastery tracking, assessments, and intelligent recommendations.
-- **Aura Desktop** — AI desktop assistant with voice interaction, desktop automation, browser automation, and multi-provider LLM support.
-- Building scalable products using **Next.js, React, TypeScript, Node.js, Supabase, Firebase, and AI APIs.**
-- Exploring **AI Agents, MCP, RAG, LLM Workflows, Desktop Automation & System Design.**
-- Practicing **Data Structures & Algorithms** to strengthen problem-solving skills.
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/news/h-projects-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/news/h-projects-light.svg">
-  <img alt="Featured Projects" src="assets/news/h-projects-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-working-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-working-light.svg">
+  <img alt="Currently Working On — OHM School, Aura Desktop, building scalable products, exploring AI agents, and practicing data structures and algorithms." src="assets/news/n-working-light.svg" width="100%">
 </picture>
 
-| Project | Description |
-|:---|:---|
-| [**OHM School**](https://ohmschool.org) | AI-powered Personalized Learning Platform for adaptive education |
-| [**Portfolio**](https://hakkan.is-a.dev) | Interactive terminal-style developer portfolio |
-| [**CommitHabit**](https://commithabit.vercel.app) | Automation tool for GitHub contribution streak |
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/news/h-stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/news/h-stack-light.svg">
-  <img alt="Tech Stack" src="assets/news/h-stack-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-projects-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-projects-light.svg">
+  <img alt="Featured Projects — OHM School, Portfolio, and CommitHabit." src="assets/news/n-projects-light.svg" width="100%">
 </picture>
 
-| | |
-|:---|:---|
-| **Languages** | Java · TypeScript · JavaScript · Python · C |
-| **Frontend** | Next.js · React · Tailwind CSS · HTML · CSS · Shadcn UI |
-| **Backend** | Node.js · Express · REST API |
-| **Database** | MongoDB · PostgreSQL · MySQL · Redis · Firebase · Supabase |
-| **AI & LLMs** | OpenAI · Google Gemini · Anthropic Claude · Groq · NVIDIA NIM |
-| **Cloud & DevOps** | Git · GitHub · Docker · Vercel · Netlify · Render |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-stack-light.svg">
+  <img alt="Tech Stack — languages, frontend, backend, database, AI and LLMs, cloud and devops." src="assets/news/n-stack-light.svg" width="100%">
+</picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/news/h-activity-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/news/h-activity-light.svg">
-  <img alt="GitHub Activity" src="assets/news/h-activity-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-activity-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-activity-light.svg">
+  <img alt="GitHub Activity" src="assets/news/n-activity-light.svg" width="100%">
 </picture>
 
 <div align="center">
@@ -81,10 +56,79 @@ Currently working remotely at [**Persist Ventures**](https://persist.org), where
 </div>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/news/h-building-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/news/h-building-light.svg">
-  <img alt="What I Enjoy Building" src="assets/news/h-building-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-building-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-building-light.svg">
+  <img alt="What I Enjoy Building — AI agents, desktop applications, full stack web applications, education platforms, developer tools, voice interfaces, RAG systems, premium UI/UX, and performance optimization." src="assets/news/n-building-light.svg" width="100%">
 </picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-connect-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-connect-light.svg">
+  <img alt="Let's Connect — portfolio, Persist portfolio, email, LinkedIn, and GitHub." src="assets/news/n-connect-light.svg" width="100%">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/news/n-colophon-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/news/n-colophon-light.svg">
+  <img alt="Code. Build. Learn. Ship. Repeat." src="assets/news/n-colophon-light.svg" width="100%">
+</picture>
+
+<div align="center">
+
+<img alt="Profile views" src="https://komarev.com/ghpvc/?username=HakkanShah&label=Profile+Views&color=A8322D&style=flat-square">
+
+</div>
+
+<details>
+<summary>Read as plain text (every link clickable)</summary>
+
+<br>
+
+# Hi, I'm Hakkan Shah
+
+### Full Stack AI Engineer • Next.js • MERN • AI Agents • AI Automations
+
+Building AI-first applications, desktop agents, automation tools, and scalable web platforms.
+
+[Portfolio](https://hakkan.is-a.dev) •
+[Persist Portfolio](https://hakkan.persist.org) •
+[Resume](https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf) •
+[LinkedIn](https://linkedin.com/in/Hakkan)
+
+## About Me
+
+I'm a **Full Stack AI Engineer** passionate about building production-grade AI products that combine modern web technologies with LLMs, automation, and intelligent user experiences.
+
+Currently working remotely at [**Persist Ventures**](https://persist.org), where I build and maintain AI-powered products used in production.
+
+### Currently Working On
+
+- [**OHM School**](https://ohmschool.org) — AI-powered personalized learning platform featuring adaptive learning, AI tutor (Ollie), mastery tracking, assessments, and intelligent recommendations.
+- **Aura Desktop** — AI desktop assistant with voice interaction, desktop automation, browser automation, and multi-provider LLM support.
+- Building scalable products using **Next.js, React, TypeScript, Node.js, Supabase, Firebase, and AI APIs.**
+- Exploring **AI Agents, MCP, RAG, LLM Workflows, Desktop Automation & System Design.**
+- Practicing **Data Structures & Algorithms** to strengthen problem-solving skills.
+
+## Featured Projects
+
+| Project | Description |
+|:---|:---|
+| [**OHM School**](https://ohmschool.org) | AI-powered Personalized Learning Platform for adaptive education |
+| [**Portfolio**](https://hakkan.is-a.dev) | Interactive terminal-style developer portfolio |
+| [**CommitHabit**](https://commithabit.vercel.app) | Automation tool for GitHub contribution streak |
+
+## Tech Stack
+
+| | |
+|:---|:---|
+| **Languages** | Java · TypeScript · JavaScript · Python · C |
+| **Frontend** | Next.js · React · Tailwind CSS · HTML · CSS · Shadcn UI |
+| **Backend** | Node.js · Express · REST API |
+| **Database** | MongoDB · PostgreSQL · MySQL · Redis · Firebase · Supabase |
+| **AI & LLMs** | OpenAI · Google Gemini · Anthropic Claude · Groq · NVIDIA NIM |
+| **Cloud & DevOps** | Git · GitHub · Docker · Vercel · Netlify · Render |
+
+## What I Enjoy Building
 
 - AI Agents & Autonomous Workflows
 - Desktop Applications (Electron)
@@ -96,11 +140,7 @@ Currently working remotely at [**Persist Ventures**](https://persist.org), where
 - Premium UI/UX Experiences
 - Performance Optimization
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/news/h-connect-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/news/h-connect-light.svg">
-  <img alt="Let's Connect" src="assets/news/h-connect-light.svg" width="100%">
-</picture>
+## Let's Connect
 
 - [Portfolio](https://hakkan.is-a.dev) — hakkan.is-a.dev
 - [Persist Portfolio](https://hakkan.persist.org) — hakkan.persist.org
@@ -108,18 +148,6 @@ Currently working remotely at [**Persist Ventures**](https://persist.org), where
 - [LinkedIn](https://linkedin.com/in/Hakkan) — linkedin.com/in/Hakkan
 - [GitHub](https://github.com/HakkanShah) — github.com/HakkanShah
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/news/rule-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/news/rule-light.svg">
-  <img alt="" src="assets/news/rule-light.svg" width="100%">
-</picture>
-
-<div align="center">
-
-<img alt="Profile views" src="https://komarev.com/ghpvc/?username=HakkanShah&label=Profile+Views&color=A8322D&style=flat-square">
-
-<br><br>
-
 *"Code. Build. Learn. Ship. Repeat."*
 
-</div>
+</details>
