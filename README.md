@@ -109,25 +109,9 @@ flowchart LR
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/metrics-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/metrics-light.svg">
-  <img width="78%" alt="Hakkan's GitHub statistics and most used languages" src="assets/metrics-dark.svg">
-</picture>
-
-<br><br>
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=HakkanShah&background=060D14&border=2A5A7D&stroke=2A5A7D&ring=38BDF8&fire=38BDF8&currStreakNum=DCEBF7&sideNums=DCEBF7&currStreakLabel=38BDF8&sideLabels=9CC2D8&dates=5B87A3&border_radius=0">
   <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=HakkanShah&background=F1F6FA&border=8FB0C7&stroke=8FB0C7&ring=0B6FA4&fire=0B6FA4&currStreakNum=0C2436&sideNums=0C2436&currStreakLabel=0B6FA4&sideLabels=2C4A5E&dates=5A7C93&border_radius=0">
   <img height="170" alt="Hakkan's contribution streak" src="https://streak-stats.demolab.com?user=HakkanShah&background=060D14&border=2A5A7D&stroke=2A5A7D&ring=38BDF8&fire=38BDF8&currStreakNum=DCEBF7&sideNums=DCEBF7&currStreakLabel=38BDF8&sideLabels=9CC2D8&dates=5B87A3&border_radius=0">
-</picture>
-
-<br><br>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=HakkanShah&bg_color=060D14&color=9CC2D8&title_color=38BDF8&line=38BDF8&point=DCEBF7&area=true&area_color=38BDF8&hide_border=true">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=HakkanShah&bg_color=F1F6FA&color=2C4A5E&title_color=0B6FA4&line=0B6FA4&point=0C2436&area=true&area_color=0B6FA4&hide_border=true">
-  <img width="78%" alt="Hakkan's contribution activity over the past year" src="https://github-readme-activity-graph.vercel.app/graph?username=HakkanShah&bg_color=060D14&color=9CC2D8&title_color=38BDF8&line=38BDF8&point=DCEBF7&area=true&area_color=38BDF8&hide_border=true">
 </picture>
 
 </div>
@@ -169,10 +153,6 @@ flowchart LR
 </picture>
 
 <div align="center">
-
-| DRAWN BY | SHEET | REVISION | STATUS |
-|:---:|:---:|:---:|:---:|
-| Hakkan Parbej Shah | 01 of 01 | 2.0 | Active |
 
 <img alt="Profile views" src="https://komarev.com/ghpvc/?username=HakkanShah&label=Profile+Views&color=0ea5e9&style=flat-square">
 
