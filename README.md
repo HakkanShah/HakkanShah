@@ -2,17 +2,15 @@
 
 <div align="center">
 
-**[Portfolio](https://hakkan.is-a.dev)** &nbsp;·&nbsp;
-**[Persist](https://hakkan.persist.org)** &nbsp;·&nbsp;
-**[Résumé](https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf)** &nbsp;·&nbsp;
-**[LinkedIn](https://linkedin.com/in/Hakkan)** &nbsp;·&nbsp;
-**[Email](mailto:hakkanparbej@gmail.com)**
+[<img alt="Portfolio — hakkan.is-a.dev" src="assets/btn-portfolio.svg" height="42">](https://hakkan.is-a.dev)
+[<img alt="Persist — hakkan.persist.org" src="assets/btn-persist.svg" height="42">](https://hakkan.persist.org)
+[<img alt="Résumé" src="assets/btn-resume.svg" height="42">](https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf)
+[<img alt="LinkedIn" src="assets/btn-linkedin.svg" height="42">](https://linkedin.com/in/Hakkan)
+[<img alt="Email" src="assets/btn-email.svg" height="42">](mailto:hakkanparbej@gmail.com)
 
-**[OHM School](https://ohmschool.org)** &nbsp;·&nbsp;
-**[CommitHabit](https://commithabit.vercel.app)**
+[<img alt="OHM School" src="assets/btn-ohm.svg" height="42">](https://ohmschool.org)
+[<img alt="CommitHabit" src="assets/btn-commit.svg" height="42">](https://commithabit.vercel.app)
 
-<img height="180" alt="Contribution streak" src="https://streak-stats.demolab.com?user=HakkanShah&background=141418&border=E0241B&stroke=E0241B&ring=FFCB05&fire=E0241B&currStreakNum=FFFBF0&sideNums=FFFBF0&currStreakLabel=FFCB05&sideLabels=FFCB05&dates=9A9488&border_radius=0">
-
-<img alt="Readers" src="https://komarev.com/ghpvc/?username=HakkanShah&label=Readers&color=E0241B&style=flat-square">
+<img height="180" alt="Contribution streak" src="https://streak-stats.demolab.com?user=HakkanShah&background=F5ECD8&border=141418&stroke=141418&ring=E0241B&fire=E0241B&currStreakNum=141418&sideNums=141418&currStreakLabel=E0241B&sideLabels=141418&dates=6A6252&border_radius=0">
 
 </div>

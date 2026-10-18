@@ -480,3 +480,40 @@ os.makedirs(OUT, exist_ok=True)
 path = os.path.join(OUT, "comic-page.svg")
 open(path, "w").write(svg)
 print(f"  comic-page.svg  {W}x{H}  {os.path.getsize(path)/1024:.1f} KB")
+
+# ===================================================== comic buttons for README
+# Links cannot live inside the page SVG, so the markdown link row underneath
+# uses these instead of GitHub's default blue text.
+
+def button(fname, label, bg, fg):
+    pad, h, fs, off = 28, 64, 30, 6
+    tw = wide(MB, label, fs, 2)
+    bw = int(tw + pad * 2)
+    W2, H2 = bw + off, h + off
+    glyphs = "".join(sorted(set(label)))
+    face = font_b64(BANGERS_SRC, glyphs)
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W2}" height="{H2}" viewBox="0 0 {W2} {H2}" role="img" aria-label="{esc(label)}">
+<title>{esc(label)}</title>
+<defs><style>
+@font-face {{ font-family: "Bangers"; font-style: normal; font-weight: 400; src: url(data:font/woff2;base64,{face}) format("woff2"); }}
+.bang {{ font-family: "Bangers", Impact, sans-serif; }}
+</style></defs>
+<rect x="{off}" y="{off}" width="{bw}" height="{h}" fill="{INK}"></rect>
+<rect x="0" y="0" width="{bw}" height="{h}" fill="{bg}" stroke="{INK}" stroke-width="5"></rect>
+<text class="bang" x="{bw/2:.0f}" y="{h/2+11:.0f}" font-size="{fs}" letter-spacing="2" fill="{fg}" text-anchor="middle">{esc(label)}</text>
+</svg>
+'''
+    path = os.path.join(OUT, fname)
+    open(path, "w").write(svg)
+    print(f"  {fname:28s} {os.path.getsize(path)/1024:5.1f} KB")
+
+for fname, label, bg, fg in [
+    ("btn-portfolio.svg",  "PORTFOLIO",   YEL, INK),
+    ("btn-persist.svg",    "PERSIST",     YEL, INK),
+    ("btn-resume.svg",     "R\u00c9SUM\u00c9",      YEL, INK),
+    ("btn-linkedin.svg",   "LINKEDIN",    YEL, INK),
+    ("btn-email.svg",      "EMAIL",       YEL, INK),
+    ("btn-ohm.svg",        "OHM SCHOOL",  RED, CREAM),
+    ("btn-commit.svg",     "COMMITHABIT", RED, CREAM),
+]:
+    button(fname, label, bg, fg)
