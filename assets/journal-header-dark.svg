@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Field Journal of Hakkan Parbej Shah — Full Stack AI Engineer. Observations from the software field.">
+  <title>Field Journal of Hakkan Parbej Shah — Full Stack AI Engineer</title>
+  <defs>
+    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17120D"/>
+      <stop offset="0.55" stop-color="#1E1811"/>
+      <stop offset="1" stop-color="#17120D"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.45" r="0.78">
+      <stop offset="0.6" stop-color="#0F0B07" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0F0B07" stop-opacity="0.85"/>
+    </radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.92" numOctaves="4" seed="7" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+    </filter>
+    <filter id="wob" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="3" seed="19" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="3.4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="wob2" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.021" numOctaves="2" seed="43" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="2.0" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#pg)"/>
+  <rect width="1200" height="360" fill="#FFFFFF" opacity="0.1" filter="url(#grain)"/>
+  <rect width="1200" height="360" fill="url(#vig)"/>
+
+  <!-- stitched binding down the gutter -->
+  <g stroke="#6E5F49" fill="none">
+    <path d="M74 14v332" stroke-width="1" opacity="0.5"/>
+    <path d="M80 14v332" stroke-width="1" opacity="0.28"/>
+    <path d="M73.5 26h7 M73.5 42h7 M73.5 58h7 M73.5 74h7 M73.5 90h7 M73.5 106h7 M73.5 122h7 M73.5 138h7 M73.5 154h7 M73.5 170h7 M73.5 186h7 M73.5 202h7 M73.5 218h7 M73.5 234h7 M73.5 250h7 M73.5 266h7 M73.5 282h7 M73.5 298h7 M73.5 314h7 M73.5 330h7" stroke-width="1.6" stroke-linecap="round" opacity="0.62"/>
+  </g>
+
+  <!-- hand-ruled frame -->
+  <g filter="url(#wob)" fill="none" stroke="#B9A98D" stroke-linecap="round">
+    <path d="M108 30H1162V330H108Z" stroke-width="1.5" opacity="0.65"/>
+    <path d="M116 38H1154V322H116Z" stroke-width="0.8" opacity="0.4"/>
+  </g>
+
+  <g filter="url(#wob2)"><path d="M1092 334Q1142 194 1030 52" fill="none" stroke="#93B87C" stroke-width="2.1" stroke-linecap="round" opacity="0.95"/><path d="M1099.0 311.6Q1127.4 314.7 1148.6 345.2Q1120.2 342.0 1099.0 311.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1099.0 311.6Q1077.4 302.3 1049.9 315.4Q1071.5 324.7 1099.0 311.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1104.3 286.6Q1126.0 286.9 1144.4 308.3Q1122.6 308.1 1104.3 286.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1104.3 286.6Q1079.0 278.6 1049.6 296.4Q1074.9 304.4 1104.3 286.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1107.0 261.6Q1131.3 259.4 1154.1 281.3Q1129.9 283.5 1107.0 261.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1107.0 261.6Q1087.4 257.5 1066.7 273.1Q1086.3 277.3 1107.0 261.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1107.2 236.6Q1125.1 233.1 1143.8 247.6Q1125.9 251.1 1107.2 236.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1107.2 236.6Q1085.1 234.3 1064.0 253.9Q1086.1 256.2 1107.2 236.6" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1104.8 211.5Q1123.9 205.7 1145.9 219.5Q1126.8 225.3 1104.8 211.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1104.8 211.5Q1088.4 211.5 1074.4 227.5Q1090.8 227.5 1104.8 211.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1099.8 186.4Q1113.3 180.9 1130.2 189.3Q1116.7 194.8 1099.8 186.4" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1099.8 186.4Q1082.2 188.1 1068.8 206.8Q1086.5 205.1 1099.8 186.4" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1092.3 161.3Q1105.9 154.2 1124.5 161.3Q1110.9 168.5 1092.3 161.3" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1092.3 161.3Q1079.9 163.7 1071.7 177.8Q1084.1 175.5 1092.3 161.3" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1082.2 136.2Q1091.2 130.4 1104.4 134.2Q1095.5 140.0 1082.2 136.2" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1082.2 136.2Q1069.8 139.7 1062.6 154.9Q1075.1 151.4 1082.2 136.2" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1069.6 111.0Q1077.9 104.6 1091.1 107.3Q1082.8 113.7 1069.6 111.0" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1069.6 111.0Q1061.6 114.0 1057.6 124.4Q1065.7 121.4 1069.6 111.0" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1054.4 85.8Q1059.1 81.6 1067.2 82.6Q1062.5 86.8 1054.4 85.8" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1054.4 85.8Q1047.4 89.0 1044.5 98.6Q1051.5 95.4 1054.4 85.8" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1036.6 60.5Q1039.8 57.2 1045.8 57.6Q1042.6 60.9 1036.6 60.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1036.6 60.5Q1033.2 62.3 1032.1 67.2Q1035.5 65.3 1036.6 60.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.95"/><path d="M1099.0 311.6L1129.7 332.6" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1099.0 311.6L1068.5 314.1" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1104.3 286.6L1129.1 300.2" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1104.3 286.6L1070.4 292.8" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1107.0 261.6L1136.2 273.9" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1107.0 261.6L1082.0 268.9" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1107.2 236.6L1129.9 243.5" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1107.2 236.6L1080.4 247.4" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1104.8 211.5L1130.3 216.6" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1104.8 211.5L1085.9 221.5" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1099.8 186.4L1118.7 188.3" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1099.8 186.4L1080.6 199.2" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1092.3 161.3L1112.3 161.4" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1092.3 161.3L1079.5 171.6" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1082.2 136.2L1096.0 135.0" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1082.2 136.2L1070.1 147.8" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1069.6 111.0L1083.0 108.8" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1069.6 111.0L1062.2 119.3" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1054.4 85.8L1062.4 83.8" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1054.4 85.8L1048.3 93.8" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1036.6 60.5L1042.3 58.7" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1036.6 60.5L1033.8 64.7" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.52"/><path d="M1016 340Q966 246 1000 128" fill="none" stroke="#93B87C" stroke-width="2.1" stroke-linecap="round" opacity="0.7"/><path d="M1008.5 324.8Q1024.7 313.4 1049.6 321.2Q1033.4 332.7 1008.5 324.8" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M1008.5 324.8Q992.7 328.5 984.0 348.1Q999.9 344.4 1008.5 324.8" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M998.9 300.0Q1011.6 292.9 1029.2 300.6Q1016.5 307.7 998.9 300.0" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M998.9 300.0Q981.3 302.2 969.7 322.5Q987.2 320.3 998.9 300.0" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M992.0 274.5Q1006.3 268.3 1024.1 278.5Q1009.8 284.6 992.0 274.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M992.0 274.5Q979.2 274.7 969.2 288.3Q982.0 288.1 992.0 274.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M987.7 248.1Q998.2 244.9 1010.0 253.4Q999.5 256.6 987.7 248.1" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M987.7 248.1Q974.4 247.0 962.6 260.1Q975.9 261.2 987.7 248.1" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M986.2 221.0Q997.1 218.8 1008.1 228.6Q997.2 230.7 986.2 221.0" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M986.2 221.0Q977.3 219.3 968.4 227.4Q977.3 229.1 986.2 221.0" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M987.5 193.2Q994.6 192.4 1001.0 199.3Q993.9 200.1 987.5 193.2" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M987.5 193.2Q979.1 190.7 969.9 197.6Q978.2 200.0 987.5 193.2" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M991.4 164.5Q997.6 164.4 1002.5 170.8Q996.4 170.9 991.4 164.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M991.4 164.5Q986.7 162.6 981.0 166.1Q985.7 168.0 991.4 164.5" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M998.0 135.1Q1000.7 135.2 1002.6 138.2Q999.9 138.0 998.0 135.1" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M998.0 135.1Q995.1 133.6 991.4 135.6Q994.3 137.0 998.0 135.1" fill="#93B87C" fill-opacity="0.13" stroke="#93B87C" stroke-width="1.15" stroke-linejoin="round" opacity="0.7"/><path d="M1008.5 324.8L1034.0 322.7" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M1008.5 324.8L993.4 339.3" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M998.9 300.0L1017.7 300.5" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M998.9 300.0L980.8 314.0" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M992.0 274.5L1011.9 277.1" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M992.0 274.5L977.9 283.1" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M987.7 248.1L1001.6 251.4" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M987.7 248.1L972.2 255.6" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M986.2 221.0L999.8 225.8" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M986.2 221.0L975.2 225.0" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M987.5 193.2L995.9 197.0" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M987.5 193.2L976.5 195.9" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M991.4 164.5L998.3 168.5" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M991.4 164.5L984.9 165.5" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M998.0 135.1L1000.8 137.0" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/><path d="M998.0 135.1L993.9 135.4" fill="none" stroke="#93B87C" stroke-width="0.7" opacity="0.39"/></g>
+
+  <!-- title plate -->
+  <g filter="url(#wob)" fill="none" stroke="#D4805E" stroke-linecap="round">
+    <path d="M150 196h470" stroke-width="1.6" opacity="0.9"/>
+    <path d="M150 203h300" stroke-width="0.9" opacity="0.5"/>
+  </g>
+
+  <text x="152" y="88" font-family="Georgia,'Iowan Old Style','Times New Roman',serif"
+        font-size="19" letter-spacing="7.5" fill="#B9A98D">F I E L D &#160; J O U R N A L</text>
+  <text x="152" y="112" font-family="Georgia,'Times New Roman',serif" font-size="13"
+        letter-spacing="2.6" fill="#6E5F49">OF THE SOFTWARE FIELD &#183; VOL. III</text>
+
+  <text x="148" y="178" font-family="Georgia,'Iowan Old Style','Times New Roman',serif"
+        font-size="76" fill="#EADFC8">Hakkan Parbej Shah</text>
+
+  <text x="152" y="240" font-family="Georgia,'Times New Roman',serif" font-size="22"
+        font-style="italic" fill="#B9A98D">Full Stack AI Engineer &#183; collector of working software</text>
+  <text x="152" y="270" font-family="Georgia,'Times New Roman',serif" font-size="15.5"
+        fill="#6E5F49">Next.js &#183; MERN &#183; AI Agents &#183; Automation &#8212; specimens gathered since 2023</text>
+
+  <!-- specimen tag, tied on -->
+  <g filter="url(#wob2)">
+    <path d="M650 258q22 22 44 28" fill="none" stroke="#6E5F49" stroke-width="1.2"
+          stroke-linecap="round" opacity="0.8"/>
+  </g>
+  <g transform="rotate(-4 790 292)">
+    <path d="M706 266h170v54H706l-16-27z" fill="#3A2F21" fill-opacity="0.5"
+          stroke="#6E5F49" stroke-width="1.1"/>
+    <circle cx="699" cy="293" r="3.6" fill="none" stroke="#6E5F49" stroke-width="1.1"/>
+    <text x="720" y="289" font-family="Georgia,'Times New Roman',serif" font-size="11.5"
+          letter-spacing="2.4" fill="#B9A98D">SPECIMEN</text>
+    <text x="720" y="310" font-family="Georgia,'Times New Roman',serif" font-size="14"
+          letter-spacing="0.6" fill="#EADFC8">No. 001 &#183; Kolkata, IN</text>
+  </g>
+
+  <!-- washi tape at the corners -->
+  <g fill="#3A2F21" fill-opacity="0.5" stroke="#6E5F49" stroke-width="0.7" stroke-opacity="0.4">
+    <path d="M92 6l78 14-10 36-78-14z"/>
+    <path d="M88 312l80-15 9 35-80 15z"/>
+  </g>
+</svg>
