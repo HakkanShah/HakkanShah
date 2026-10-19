@@ -594,7 +594,12 @@ readme = "\n".join(rows_md) + '\n<br clear="all">\n'
 readme += '''
 <div align="center">
 
-<img height="180" alt="Contribution streak" src="https://streak-stats.demolab.com?user=HakkanShah&background=F5ECD8&border=141418&stroke=141418&ring=E0241B&fire=E0241B&currStreakNum=141418&sideNums=141418&currStreakLabel=E0241B&sideLabels=141418&dates=6A6252&border_radius=0">
+<img height="196" alt="Contribution streak" src="https://streak-stats.demolab.com?user=HakkanShah&background=F5ECD8&border=141418&stroke=141418&ring=E0241B&fire=E0241B&currStreakNum=141418&sideNums=141418&currStreakLabel=E0241B&sideLabels=141418&dates=6A6252&border_radius=0">
+<img height="196" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=HakkanShah&layout=compact&langs_count=6&card_width=400&bg_color=F5ECD8&title_color=E0241B&text_color=141418&border_color=141418&border_radius=0&title=Most%20Used%20Languages">
+
+<br><br>
+
+<img alt="Readers" src="https://visitor-badge.laobi.icu/badge?page_id=HakkanShah.HakkanShah&left_text=READERS&left_color=141418&right_color=E0241B">
 
 </div>
 '''
