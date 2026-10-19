@@ -229,7 +229,7 @@ def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls, visit=
             f'stroke="{INK}" stroke-width="6"></rect>')
         # the status tag becomes a sticker slapped on the corner of the shot
         sx, sy = tx - 16, ty - 16
-        add(f'<g transform="rotate(-4 {sx+gw/2:.0f} {sy+19})">'
+        add(f'<g class="wob">'
             f'<rect x="{sx}" y="{sy}" width="{gw:.0f}" height="38" fill="{YEL}" '
             f'stroke="{INK}" stroke-width="4"></rect>'
             + bang(tag, sx + gw / 2, sy + 27, 22, INK, 2, "middle") + '</g>')
@@ -253,13 +253,15 @@ def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls, visit=
         tw3 = wide(MB, label, 25, 2)
         vw = tw3 + 38 + 30          # padding + room for the chevron
         bh = 46
-        add(f'<rect x="{x+5:.0f}" y="{y+3}" width="{vw:.0f}" height="{bh}" fill="{INK}"></rect>')
-        add(f'<rect x="{x:.0f}" y="{y-2}" width="{vw:.0f}" height="{bh}" fill="{RED}" '
-            f'stroke="{INK}" stroke-width="4"></rect>')
-        add(bang(label, x + 19, y + 30, 25, CREAM, 2))
         cx = x + 19 + tw3 + 18
-        add(f'<path d="M{cx:.0f} {y+12}l11 9-11 9" fill="none" stroke="{CREAM}" '
-            f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>')
+        add(f'<g class="btn">'
+            f'<rect x="{x+5:.0f}" y="{y+3}" width="{vw:.0f}" height="{bh}" fill="{INK}"></rect>'
+            f'<rect x="{x:.0f}" y="{y-2}" width="{vw:.0f}" height="{bh}" fill="{RED}" '
+            f'stroke="{INK}" stroke-width="4"></rect>'
+            + bang(label, x + 19, y + 30, 25, CREAM, 2)
+            + f'<g class="chev"><path d="M{cx:.0f} {y+12}l11 9-11 9" fill="none" stroke="{CREAM}" '
+              f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></g>'
+            '</g>')
         y += bh + 32
     else:
         y += 38 + 34
@@ -287,8 +289,8 @@ def contact_row(label, value, idx):
     add(f'<rect x="{PAD}" y="{y+h-2}" width="{CONTENT}" height="2" fill="{INK}" opacity="0.18"></rect>')
     add(body(f"{label}:", PAD + 30, y + 44, 27, INK))
     add(body(value, PAD + 206, y + 44, 27, RED))
-    add(f'<path d="M{W-PAD-54} {y+28}l16 10-16 10" fill="none" stroke="{RED}" '
-        f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>')
+    add(f'<g class="chev"><path d="M{W-PAD-54} {y+28}l16 10-16 10" fill="none" stroke="{RED}" '
+        f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></g>')
     y += h
 
 # ============================================================================ art
@@ -325,37 +327,45 @@ add(f'<rect x="0" y="0" width="{W}" height="{MAST+COVER+TAG}" fill="{BLU}"></rec
 add('<g clip-path="url(#cover)">')
 add(f'<g class="drift"><rect x="-200" y="-200" width="1400" height="1100" fill="url(#dots)"></rect></g>')
 add(f'<path class="pulse" d="{rays(640, 220)}" stroke="{CREAM}" stroke-width="5" fill="none"></path>')
-add('<g transform="translate(18 11) scale(0.73)">'
+add('<g class="bob"><g transform="translate(91 29) scale(0.70)">'
+    # glow behind the figure
+    f'<ellipse class="glow" cx="880" cy="400" rx="300" ry="258" fill="url(#heroGlow)"></ellipse>'
+    # cape, swinging from the shoulders
+    '<g class="sway">'
     f'<path d="M848 344C726 378 664 476 648 604L748 604C756 482 786 406 856 364Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
     f'<path d="M912 344C1034 378 1096 476 1112 604L1012 604C1004 482 974 406 904 364Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
+    '</g>'
     f'<rect x="862" y="282" width="36" height="52" fill="#07070A"></rect>'
     f'<path d="M880 330C820 330 786 360 776 410L766 604H994L984 410C974 360 940 330 880 330Z" fill="{INK}"></path>'
     f'<circle cx="880" cy="240" r="52" fill="{INK}"></circle>'
     f'<path d="M828 240a52 52 0 0 1 104 0z" fill="#07070A"></path>'
+    # a glint of light on the glasses, blinking now and then
+    f'<g class="eye"><rect x="852" y="246" width="20" height="9" rx="4" fill="{CREAM}" opacity="0.85"></rect>'
+    f'<rect x="888" y="246" width="20" height="9" rx="4" fill="{CREAM}" opacity="0.85"></rect></g>'
     f'<path d="M818 242a62 62 0 0 1 124 0" fill="none" stroke="{YEL}" stroke-width="12" stroke-linecap="round"></path>'
     f'<rect x="806" y="230" width="23" height="44" rx="9" fill="{YEL}" stroke="{INK}" stroke-width="6"></rect>'
     f'<rect x="931" y="230" width="23" height="44" rx="9" fill="{YEL}" stroke="{INK}" stroke-width="6"></rect>'
     f'<rect x="774" y="558" width="212" height="16" rx="4" fill="{RED}" stroke="{INK}" stroke-width="6"></rect>'
     f'<path d="M792 558l18-68h140l18 68z" fill="{YEL}" stroke="{INK}" stroke-width="8" stroke-linejoin="round"></path>'
-    f'<rect x="826" y="506" width="50" height="8" fill="{INK}"></rect>'
-    f'<rect x="826" y="520" width="80" height="8" fill="{INK}"></rect>'
-    f'<rect x="826" y="534" width="38" height="8" fill="{INK}"></rect>'
-    '</g>')
+    # code typing itself out on the screen
+    f'<rect class="tl" x="826" y="506" width="50" height="8" fill="{INK}"></rect>'
+    f'<rect class="tl tl2" x="826" y="520" width="80" height="8" fill="{INK}"></rect>'
+    f'<rect class="tl tl3" x="826" y="534" width="38" height="8" fill="{INK}"></rect>'
+    '</g></g>')
 add(f'<g class="bob"><circle cx="812" cy="128" r="33" fill="{YEL}" stroke="{INK}" stroke-width="5"></circle>'
     + bang("AI", 812, 140, 30, INK, 1, "middle") + '</g>')
 add(f'<g class="bob2"><circle cx="782" cy="276" r="24" fill="{YEL}" stroke="{INK}" stroke-width="5"></circle>'
     + bang("</>", 782, 286, 20, INK, 0, "middle") + '</g>')
-add(f'<g transform="translate(116 378)"><g class="spin">'
+add(f'<g transform="translate(118 358)"><g class="spin">'
     f'<path d="{burst_path(70, 50)}" fill="{YEL}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"></path></g>'
     + bang("SHIPS", 0, -12, 24, INK, 1, "middle")
     + bang("IN", 0, 14, 24, INK, 1, "middle")
     + bang("PROD!", 0, 40, 24, INK, 1, "middle") + '</g>')
 add('<g class="breathe">'
-    + bang("THE AMAZING", 44, 122, 46, YEL, 4)
-    + shadow("HAKKAN", 40, 226, 110, 2, CREAM, YEL, INK) + '</g>')
+    + shadow("HAKKAN SHAH", 40, 178, 100, 2, CREAM, YEL, INK) + '</g>')
 cw = wide(MB, "FULL STACK AI ENGINEER", 26, 3) + 48
-add(f'<rect x="40" y="254" width="{cw:.0f}" height="52" fill="{INK}" stroke="{CREAM}" stroke-width="4"></rect>')
-add(bang("FULL STACK AI ENGINEER", 40 + cw / 2, 289, 26, YEL, 3, "middle"))
+add(f'<rect x="40" y="208" width="{cw:.0f}" height="52" fill="{INK}" stroke="{CREAM}" stroke-width="4"></rect>')
+add(bang("FULL STACK AI ENGINEER", 40 + cw / 2, 243, 26, YEL, 3, "middle"))
 add('</g>')
 add(f'<rect x="0" y="0" width="{W}" height="{MAST}" fill="{RED}"></rect>')
 add(f'<rect x="0" y="{MAST-3}" width="{W}" height="6" fill="{INK}"></rect>')
@@ -392,7 +402,7 @@ project("TEACH!", "OHM SCHOOL", "FIRST APPEARANCE", BLU, YEL, RED, art_speed,
         "An AI learning platform that rearranges the lesson around whoever is sitting in "
         "front of it. Resident tutor Ollie, mastery tracking, assessments and recommendations "
         "that adapt as the learner moves.",
-        ["Next.js", "TypeScript", "LLM"], "pop1", visit="OHMSCHOOL.ORG",
+        ["Next.js", "TypeScript", "LLM"], "pop1", visit="OHM SCHOOL",
         thumb=os.path.join(HERE, "thumbs", "ohm.jpg"))
 slice_end()
 
@@ -402,7 +412,7 @@ project("AUTOMATE!", "AURA DESKTOP", "BETA V0.2.0", RED, YEL, INK, art_impact,
         "A desktop AI assistant that can actually press the buttons. Chat or speak your "
         "intent and watch it book flights, apply to jobs, summarise your inbox and run "
         "anything else in the browser. No code, no setup.",
-        ["Electron", "Node.js", "Voice"], "pop2", visit="AURA-WEBSITE.VERCEL.APP",
+        ["Electron", "Node.js", "Voice", "Multi-LLM"], "pop2", visit="AURA",
         thumb=os.path.join(HERE, "thumbs", "aura.jpg"))
 slice_end()
 
@@ -410,7 +420,7 @@ slice_begin("04-portfolio", PORTFOLIO, "Portfolio - a terminal-driven portfolio"
 project("TYPE!", "PORTFOLIO", "FAN FAVOURITE", YEL, RED, CREAM, art_rings,
         "A portfolio you drive from a command line. Built on the suspicion that a portfolio "
         "should ask something of the person reading it.",
-        ["React", "Terminal UI", "Vercel"], "pop3", visit="HAKKAN.IS-A.DEV",
+        ["React", "Terminal UI", "Vercel"], "pop3", visit="MY PORTFOLIO",
         thumb=os.path.join(HERE, "thumbs", "portfolio.jpg"))
 slice_end()
 
@@ -418,7 +428,7 @@ slice_begin("05-commithabit", "https://commithabit.vercel.app", "CommitHabit - c
 project("COMMIT!", "COMMITHABIT", "DAILY SERIAL", INK, YEL, RED, art_grid,
         "Keeps the contribution streak alive. A tool about consistency has to be more "
         "consistent than the habit it is protecting, so it runs unattended.",
-        ["Node.js", "GitHub API", "Cron"], "pop4", visit="COMMITHABIT.VERCEL.APP",
+        ["Node.js", "GitHub API", "Cron"], "pop4", visit="COMMITHABIT",
         thumb=os.path.join(HERE, "thumbs", "commithabit.jpg"))
 slice_end()
 
@@ -512,6 +522,13 @@ KEYFRAMES = """
 @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.1; } }
 @keyframes march { to { transform: translateX(34px); } }
+@keyframes glow { 0%, 100% { opacity: 0.30; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.07); } }
+@keyframes sway { 0%, 100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+@keyframes typeline { 0% { transform: scaleX(0); } 22% { transform: scaleX(1); } 78% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+@keyframes btnpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+@keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+@keyframes wobble { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(-0.8deg); } }
+@keyframes blinkeye { 0%, 92%, 100% { opacity: 1; } 95% { opacity: 0.05; } }
 @keyframes pop1 { 0%, 100% { transform: scale(1) rotate(-5deg); } 46% { transform: scale(1.06) rotate(-5deg); } }
 @keyframes pop2 { 0%, 100% { transform: scale(1) rotate(4deg); } 46% { transform: scale(1.06) rotate(4deg); } }
 @keyframes pop3 { 0%, 100% { transform: scale(1) rotate(-3deg); } 46% { transform: scale(1.06) rotate(-3deg); } }
@@ -526,13 +543,23 @@ KEYFRAMES = """
 .bob2 { animation: bob 5.9s ease-in-out infinite; }
 .blink { animation: blink 1.4s steps(1, end) infinite; }
 .march { animation: march 2.2s linear infinite; }
+.glow { animation: glow 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.sway { animation: sway 5.2s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 0%; }
+.tl { animation: typeline 4.2s steps(14, end) infinite; transform-box: fill-box; transform-origin: left center; }
+.tl2 { animation-delay: 0.5s; }
+.tl3 { animation-delay: 1s; }
+.btn { animation: btnpulse 2.3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.chev { animation: nudge 1.6s ease-in-out infinite; }
+.wob { animation: wobble 4.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.eye { animation: blinkeye 5.8s ease-in-out infinite; }
 .pop1 { animation: pop1 2.4s ease-in-out infinite; }
 .pop2 { animation: pop2 2.9s ease-in-out infinite; }
 .pop3 { animation: pop3 2.6s ease-in-out infinite; }
 .pop4 { animation: pop4 3.1s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
   .breathe, .spin, .pulse, .drift, .bob, .bob2, .blink, .march,
-  .pop1, .pop2, .pop3, .pop4 { animation: none; }
+  .pop1, .pop2, .pop3, .pop4, .glow, .sway, .tl, .btn, .chev,
+  .wob, .eye { animation: none; }
 }
 """
 
@@ -569,6 +596,7 @@ for idx, s in enumerate(SLICES):
 <defs>
 <style>{faces}{KEYFRAMES}</style>
 <pattern id="dots" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="2.6" cy="2.6" r="2" fill="{CREAM}" opacity="0.30"></circle></pattern>
+<radialGradient id="heroGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="{YEL}" stop-opacity="0.60"></stop><stop offset="50%" stop-color="{YEL}" stop-opacity="0.22"></stop><stop offset="100%" stop-color="{YEL}" stop-opacity="0"></stop></radialGradient>
 <pattern id="pdots" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="translate(0 {-s['y0'] % 11})"><circle cx="2.6" cy="2.6" r="2" fill="{INK}" opacity="0.07"></circle></pattern>
 <clipPath id="cover"><rect x="0" y="{MAST}" width="{W}" height="{COVER}"></rect></clipPath>
 </defs>
