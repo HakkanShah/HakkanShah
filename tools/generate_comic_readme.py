@@ -599,7 +599,7 @@ readme += '''
 
 <br><br>
 
-<img alt="Readers" src="https://visitor-badge.laobi.icu/badge?page_id=HakkanShah.HakkanShah&left_text=READERS&left_color=141418&right_color=E0241B">
+<img alt="Readers" src="https://komarev.com/ghpvc/?username=HakkanShah&label=READERS&color=E0241B&style=flat-square">
 
 </div>
 '''

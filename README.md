@@ -1,15 +1,15 @@
-<a href="https://hakkan.is-a.dev"><img alt="THE AMAZING HAKKAN No. 22 cover and origin story" src="assets/page-01-cover.febe344d.svg" width="100%" align="left"></a>
-<a href="https://ohmschool.org"><img alt="OHM School - AI learning platform" src="assets/page-02-ohm.beaad35a.svg" width="100%" align="left"></a>
-<a href="https://aura-website-ashen.vercel.app/"><img alt="Aura Desktop - the UI for OpenClaw, now in beta" src="assets/page-03-aura.cb277206.svg" width="100%" align="left"></a>
-<a href="https://hakkan.is-a.dev"><img alt="Portfolio - a terminal-driven portfolio" src="assets/page-04-portfolio.34f6b717.svg" width="100%" align="left"></a>
-<a href="https://commithabit.vercel.app"><img alt="CommitHabit - contribution streak automation" src="assets/page-05-commithabit.984aba03.svg" width="100%" align="left"></a>
-<img alt="The utility belt, known powers and next issue" src="assets/page-06-stack.06669edb.svg" width="100%" align="left">
-<a href="https://hakkan.is-a.dev"><img alt="Portfolio - hakkan.is-a.dev" src="assets/page-07-c-portfolio.4a667dbf.svg" width="100%" align="left"></a>
-<a href="https://hakkan.persist.org"><img alt="Persist - hakkan.persist.org" src="assets/page-08-c-persist.bf54b61e.svg" width="100%" align="left"></a>
-<a href="mailto:hakkanparbej@gmail.com"><img alt="Email - hakkanparbej@gmail.com" src="assets/page-09-c-email.40f2799b.svg" width="100%" align="left"></a>
-<a href="https://linkedin.com/in/Hakkan"><img alt="LinkedIn - linkedin.com/in/Hakkan" src="assets/page-10-c-linkedin.0a3f8ce4.svg" width="100%" align="left"></a>
-<a href="https://github.com/HakkanShah"><img alt="GitHub - github.com/HakkanShah" src="assets/page-11-c-github.b1f26f0a.svg" width="100%" align="left"></a>
-<img alt="Approved by the Commits Code Authority - printed in Kolkata" src="assets/page-12-colophon.70f55764.svg" width="100%" align="left">
+<a href="https://hakkan.is-a.dev"><img alt="THE AMAZING HAKKAN No. 22 cover and origin story" src="assets/page-01-cover.6894e2e9.svg" width="100%" align="left"></a>
+<a href="https://ohmschool.org"><img alt="OHM School - AI learning platform" src="assets/page-02-ohm.4c50a17e.svg" width="100%" align="left"></a>
+<a href="https://aura-website-ashen.vercel.app/"><img alt="Aura Desktop - the UI for OpenClaw, now in beta" src="assets/page-03-aura.31a7223a.svg" width="100%" align="left"></a>
+<a href="https://hakkan.is-a.dev"><img alt="Portfolio - a terminal-driven portfolio" src="assets/page-04-portfolio.9162ad43.svg" width="100%" align="left"></a>
+<a href="https://commithabit.vercel.app"><img alt="CommitHabit - contribution streak automation" src="assets/page-05-commithabit.a0f516a8.svg" width="100%" align="left"></a>
+<img alt="The utility belt, known powers and next issue" src="assets/page-06-stack.fd070e13.svg" width="100%" align="left">
+<a href="https://hakkan.is-a.dev"><img alt="Portfolio - hakkan.is-a.dev" src="assets/page-07-c-portfolio.3eeb45a0.svg" width="100%" align="left"></a>
+<a href="https://hakkan.persist.org"><img alt="Persist - hakkan.persist.org" src="assets/page-08-c-persist.ab9fa14f.svg" width="100%" align="left"></a>
+<a href="mailto:hakkanparbej@gmail.com"><img alt="Email - hakkanparbej@gmail.com" src="assets/page-09-c-email.fd3a1a8c.svg" width="100%" align="left"></a>
+<a href="https://linkedin.com/in/Hakkan"><img alt="LinkedIn - linkedin.com/in/Hakkan" src="assets/page-10-c-linkedin.f4730c56.svg" width="100%" align="left"></a>
+<a href="https://github.com/HakkanShah"><img alt="GitHub - github.com/HakkanShah" src="assets/page-11-c-github.2f82fa11.svg" width="100%" align="left"></a>
+<img alt="Approved by the Commits Code Authority - printed in Kolkata" src="assets/page-12-colophon.5d9b0189.svg" width="100%" align="left">
 <br clear="all">
 
 <div align="center">
@@ -19,6 +19,6 @@
 
 <br><br>
 
-<img alt="Readers" src="https://visitor-badge.laobi.icu/badge?page_id=HakkanShah.HakkanShah&left_text=READERS&left_color=141418&right_color=E0241B">
+<img alt="Readers" src="https://komarev.com/ghpvc/?username=HakkanShah&label=READERS&color=E0241B&style=flat-square">
 
 </div>
