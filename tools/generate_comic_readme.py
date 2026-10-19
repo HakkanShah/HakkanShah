@@ -60,6 +60,7 @@ COMIC_SRC = os.path.join(CACHE, "comicneue-700-latin.woff2")
 
 INK, RED, YEL, BLU, CREAM = "#141418", "#E0241B", "#FFCB05", "#1E5FD0", "#FFFBF0"
 PAPER, DIM = "#F5ECD8", "#6A6252"
+SKIN, SHADE = "#F0B183", "#2A2A33"
 
 W, PAD = 900, 36
 CONTENT = W - PAD * 2
@@ -327,30 +328,49 @@ add(f'<rect x="0" y="0" width="{W}" height="{MAST+COVER+TAG}" fill="{BLU}"></rec
 add('<g clip-path="url(#cover)">')
 add(f'<g class="drift"><rect x="-200" y="-200" width="1400" height="1100" fill="url(#dots)"></rect></g>')
 add(f'<path class="pulse" d="{rays(640, 220)}" stroke="{CREAM}" stroke-width="5" fill="none"></path>')
-add('<g class="bob"><g transform="translate(91 29) scale(0.70)">'
-    # glow behind the figure
-    f'<ellipse class="glow" cx="880" cy="400" rx="300" ry="258" fill="url(#heroGlow)"></ellipse>'
-    # cape, swinging from the shoulders
+add('<g class="bob"><g transform="translate(549 100) scale(0.8)">'
+    f'<ellipse class="glow" cx="200" cy="250" rx="250" ry="225" fill="url(#heroGlow)"></ellipse>'
     '<g class="sway">'
-    f'<path d="M848 344C726 378 664 476 648 604L748 604C756 482 786 406 856 364Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
-    f'<path d="M912 344C1034 378 1096 476 1112 604L1012 604C1004 482 974 406 904 364Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
+    f'<path d="M152 206C78 234 40 324 30 440L112 440C118 352 138 268 170 230Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
+    f'<path d="M248 206C322 234 360 324 370 440L288 440C282 352 262 268 230 230Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
     '</g>'
-    f'<rect x="862" y="282" width="36" height="52" fill="#07070A"></rect>'
-    f'<path d="M880 330C820 330 786 360 776 410L766 604H994L984 410C974 360 940 330 880 330Z" fill="{INK}"></path>'
-    f'<circle cx="880" cy="240" r="52" fill="{INK}"></circle>'
-    f'<path d="M828 240a52 52 0 0 1 104 0z" fill="#07070A"></path>'
-    # a glint of light on the glasses, blinking now and then
-    f'<g class="eye"><rect x="852" y="246" width="20" height="9" rx="4" fill="{CREAM}" opacity="0.85"></rect>'
-    f'<rect x="888" y="246" width="20" height="9" rx="4" fill="{CREAM}" opacity="0.85"></rect></g>'
-    f'<path d="M818 242a62 62 0 0 1 124 0" fill="none" stroke="{YEL}" stroke-width="12" stroke-linecap="round"></path>'
-    f'<rect x="806" y="230" width="23" height="44" rx="9" fill="{YEL}" stroke="{INK}" stroke-width="6"></rect>'
-    f'<rect x="931" y="230" width="23" height="44" rx="9" fill="{YEL}" stroke="{INK}" stroke-width="6"></rect>'
-    f'<rect x="774" y="558" width="212" height="16" rx="4" fill="{RED}" stroke="{INK}" stroke-width="6"></rect>'
-    f'<path d="M792 558l18-68h140l18 68z" fill="{YEL}" stroke="{INK}" stroke-width="8" stroke-linejoin="round"></path>'
-    # code typing itself out on the screen
-    f'<rect class="tl" x="826" y="506" width="50" height="8" fill="{INK}"></rect>'
-    f'<rect class="tl tl2" x="826" y="520" width="80" height="8" fill="{INK}"></rect>'
-    f'<rect class="tl tl3" x="826" y="534" width="38" height="8" fill="{INK}"></rect>'
+    f'<rect x="182" y="150" width="36" height="56" fill="{SKIN}" stroke="{INK}" stroke-width="5"></rect>'
+    f'<path d="M200 196C152 196 124 222 116 262L100 440H300L284 262C276 222 248 196 200 196Z" fill="{CREAM}" stroke="{INK}" stroke-width="6" stroke-linejoin="round"></path>'
+    f'<path d="M174 208Q200 238 226 208" fill="none" stroke="{INK}" stroke-width="5"></path>'
+    f'<path d="M188 234v42M212 234v36" stroke="{RED}" stroke-width="6" stroke-linecap="round"></path>'
+    # arms reach out from behind the lid, so the hands can actually be seen
+    f'<path d="M134 250Q108 264 102 294" fill="none" stroke="{INK}" stroke-width="46" stroke-linecap="round"></path>'
+    f'<path d="M266 250Q292 264 298 294" fill="none" stroke="{INK}" stroke-width="46" stroke-linecap="round"></path>'
+    f'<path d="M134 250Q108 264 102 294" fill="none" stroke="{CREAM}" stroke-width="34" stroke-linecap="round"></path>'
+    f'<path d="M266 250Q292 264 298 294" fill="none" stroke="{CREAM}" stroke-width="34" stroke-linecap="round"></path>'
+    # head
+    '<g class="nod">'
+    f'<circle cx="200" cy="112" r="56" fill="{SKIN}" stroke="{INK}" stroke-width="6"></circle>'
+    f'<path d="M144 110C146 62 170 42 200 42C230 42 254 62 256 110C243 84 225 72 200 72C175 72 157 84 144 110Z" fill="{INK}"></path>'
+    f'<path d="M158 88q20 -9 38 -3M206 85q18 -6 38 3" fill="none" stroke="{INK}" stroke-width="6" stroke-linecap="round"></path>'
+    f'<rect x="156" y="100" width="40" height="32" rx="10" fill="{CREAM}" stroke="{INK}" stroke-width="5"></rect>'
+    f'<rect x="204" y="100" width="40" height="32" rx="10" fill="{CREAM}" stroke="{INK}" stroke-width="5"></rect>'
+    f'<path d="M196 116h8" stroke="{INK}" stroke-width="5"></path>'
+    f'<g class="eye"><circle cx="176" cy="117" r="7" fill="{INK}"></circle><circle cx="224" cy="117" r="7" fill="{INK}"></circle></g>'
+    f'<circle cx="172" cy="112" r="2.6" fill="{CREAM}"></circle><circle cx="220" cy="112" r="2.6" fill="{CREAM}"></circle>'
+    f'<path d="M178 146q22 20 44 0" fill="none" stroke="{INK}" stroke-width="6" stroke-linecap="round"></path>'
+    f'<path d="M140 108a60 60 0 0 1 120 0" fill="none" stroke="{YEL}" stroke-width="14" stroke-linecap="round"></path>'
+    f'<rect x="128" y="96" width="26" height="48" rx="12" fill="{YEL}" stroke="{INK}" stroke-width="5"></rect>'
+    f'<rect x="246" y="96" width="26" height="48" rx="12" fill="{YEL}" stroke="{INK}" stroke-width="5"></rect>'
+    '</g>'
+    # the laptop he is holding up, rocking gently, with the hands gripping its edges
+    '<g class="tilt">'
+    f'<path d="M96 362h208l10 18H86Z" fill="{SHADE}" stroke="{INK}" stroke-width="5" stroke-linejoin="round"></path>'
+    f'<rect x="104" y="248" width="192" height="114" rx="8" fill="{INK}"></rect>'
+    f'<rect x="116" y="260" width="168" height="90" fill="{YEL}"></rect>'
+    f'<rect class="tl" x="132" y="278" width="64" height="9" fill="{INK}"></rect>'
+    f'<rect class="tl tl2" x="132" y="296" width="104" height="9" fill="{INK}"></rect>'
+    f'<rect class="tl tl3" x="132" y="314" width="48" height="9" fill="{INK}"></rect>'
+    f'<rect x="82" y="280" width="44" height="58" rx="19" fill="{SKIN}" stroke="{INK}" stroke-width="5"></rect>'
+    f'<rect x="274" y="280" width="44" height="58" rx="19" fill="{SKIN}" stroke="{INK}" stroke-width="5"></rect>'
+    # finger creases, so the hands read as gripping rather than as mittens
+    f'<path d="M106 299h17M106 316h17M277 299h17M277 316h17" stroke="{INK}" stroke-width="3.5" stroke-linecap="round" opacity="0.75"></path>'
+    '</g>'
     '</g></g>')
 add(f'<g class="bob"><circle cx="812" cy="128" r="33" fill="{YEL}" stroke="{INK}" stroke-width="5"></circle>'
     + bang("AI", 812, 140, 30, INK, 1, "middle") + '</g>')
@@ -528,7 +548,11 @@ KEYFRAMES = """
 @keyframes btnpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.035); } }
 @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
 @keyframes wobble { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(-0.8deg); } }
-@keyframes blinkeye { 0%, 92%, 100% { opacity: 1; } 95% { opacity: 0.05; } }
+@keyframes nod { 0%, 100% { transform: rotate(-1.8deg); } 50% { transform: rotate(1.8deg); } }
+@keyframes typeL { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes typeR { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(0); } }
+@keyframes blinkeye { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.12); } }
+@keyframes tilt { 0%, 100% { transform: rotate(-1.3deg); } 50% { transform: rotate(1.3deg); } }
 @keyframes pop1 { 0%, 100% { transform: scale(1) rotate(-5deg); } 46% { transform: scale(1.06) rotate(-5deg); } }
 @keyframes pop2 { 0%, 100% { transform: scale(1) rotate(4deg); } 46% { transform: scale(1.06) rotate(4deg); } }
 @keyframes pop3 { 0%, 100% { transform: scale(1) rotate(-3deg); } 46% { transform: scale(1.06) rotate(-3deg); } }
@@ -551,7 +575,11 @@ KEYFRAMES = """
 .btn { animation: btnpulse 2.3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 .chev { animation: nudge 1.6s ease-in-out infinite; }
 .wob { animation: wobble 4.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-.eye { animation: blinkeye 5.8s ease-in-out infinite; }
+.eye { animation: blinkeye 5.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.tilt { animation: tilt 5.6s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+.nod { animation: nod 4.8s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+.handL { animation: typeL 0.62s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.handR { animation: typeR 0.62s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
 .pop1 { animation: pop1 2.4s ease-in-out infinite; }
 .pop2 { animation: pop2 2.9s ease-in-out infinite; }
 .pop3 { animation: pop3 2.6s ease-in-out infinite; }
@@ -559,7 +587,7 @@ KEYFRAMES = """
 @media (prefers-reduced-motion: reduce) {
   .breathe, .spin, .pulse, .drift, .bob, .bob2, .blink, .march,
   .pop1, .pop2, .pop3, .pop4, .glow, .sway, .tl, .btn, .chev,
-  .wob, .eye { animation: none; }
+  .wob, .eye, .nod, .tilt { animation: none; }
 }
 """
 
