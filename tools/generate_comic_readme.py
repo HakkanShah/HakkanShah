@@ -229,11 +229,19 @@ def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls, visit=
         x += tw2 + 10
     if visit:
         label = f"VISIT {visit}"
-        vw = wide(MB, label, 24, 2) + 34
-        add(f'<rect x="{x:.0f}" y="{y-2}" width="{vw:.0f}" height="42" fill="{RED}" '
-            f'stroke="{INK}" stroke-width="3"></rect>')
-        add(bang(label, x + vw / 2, y + 28, 24, CREAM, 2, "middle"))
-    y += 38 + 34
+        tw3 = wide(MB, label, 25, 2)
+        vw = tw3 + 38 + 30          # padding + room for the chevron
+        bh = 46
+        add(f'<rect x="{x+5:.0f}" y="{y+3}" width="{vw:.0f}" height="{bh}" fill="{INK}"></rect>')
+        add(f'<rect x="{x:.0f}" y="{y-2}" width="{vw:.0f}" height="{bh}" fill="{RED}" '
+            f'stroke="{INK}" stroke-width="4"></rect>')
+        add(bang(label, x + 19, y + 30, 25, CREAM, 2))
+        cx = x + 19 + tw3 + 18
+        add(f'<path d="M{cx:.0f} {y+12}l11 9-11 9" fill="none" stroke="{CREAM}" '
+            f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>')
+        y += bh + 32
+    else:
+        y += 38 + 34
 
 def rows(data, label_w, size=27, lh=38):
     global y
