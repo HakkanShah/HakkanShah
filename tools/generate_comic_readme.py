@@ -1,23 +1,33 @@
-"""Generate the comic-book profile README as ONE continuous animated SVG page.
+"""Generate the comic-book profile README as a stack of flush, clickable SVG slices.
 
     pip install fonttools brotli
     python3 tools/generate_comic_readme.py
 
-Everything — art, lettering and body copy — lives in a single file, so the
-README reads as one unbroken comic page instead of separate panels with
-GitHub's page background showing between them.
+The page looks like one unbroken comic page but is cut into horizontal
+slices so regions can be links.
 
-Two constraints shape the design:
+Why slices at all: an SVG loaded through an <img> tag runs in the browser's
+secure static mode, which allows no scripts, no external fetches and no
+links. An <a> inside the SVG can therefore never be clicked. The only way
+to get clickable regions is one <img> per region, each wrapped in <a>.
 
-  * An SVG loaded through an <img> tag cannot fetch anything external, so
-    both fonts are embedded as base64 WOFF2, subset to the glyphs actually
-    used. A Google Fonts <link> would silently fall back to a system font.
+Why they do not show seams: plain inline images sit on a text baseline, and
+the line box leaves a ~7px gap under each one. Floating them with
+align="left" takes them out of the line box entirely, so consecutive slices
+stack perfectly flush. Measured, not assumed. `align` is on GitHub's
+allowed-attribute list; `style` is not, which is why this is the only
+available lever.
+
+Other constraints:
+
+  * Both fonts are embedded as base64 WOFF2, subset per slice to just the
+    glyphs that slice uses. A Google Fonts <link> would silently fall back
+    to a system font.
   * A 900px page scales to roughly 370px on a phone, so body copy is set at
-    29px (~3% of page width, which is about what real comics use). Anything
-    under ~20px here turns to mush on mobile.
-
-Links cannot survive inside an SVG, so README.md carries one markdown link
-row beneath the page.
+    29px (~3% of page width, about what real comics use).
+  * The paper halftone is static. Each slice is a separate image whose
+    animations start when it loads, so a drifting page-wide texture would
+    desync between slices. Animations that live inside one slice are fine.
 """
 import base64, io, math, os, urllib.request
 from fontTools import subset
@@ -51,8 +61,7 @@ COMIC_SRC = os.path.join(CACHE, "comicneue-700-latin.woff2")
 INK, RED, YEL, BLU, CREAM = "#141418", "#E0241B", "#FFCB05", "#1E5FD0", "#FFFBF0"
 PAPER, DIM = "#F5ECD8", "#6A6252"
 
-W = 900
-PAD = 36
+W, PAD = 900, 36
 CONTENT = W - PAD * 2
 
 # ----------------------------------------------------------------- font metrics
@@ -63,15 +72,13 @@ def metrics(path):
     hmtx = f["hmtx"]
     return {chr(cp): hmtx[n][0] / upm for cp, n in f.getBestCmap().items()}
 
-MB = metrics(BANGERS_SRC)   # Bangers
-MC = metrics(COMIC_SRC)     # Comic Neue bold
+MB = metrics(BANGERS_SRC)
+MC = metrics(COMIC_SRC)
 
 def wide(table, text, size, ls=0.0):
-    """Rendered width of `text`, including letter-spacing."""
     return sum(table.get(c, 0.5) for c in text) * size + ls * max(0, len(text) - 1)
 
 def wrap(table, text, size, maxw, ls=0.0):
-    """Greedy wrap to `maxw` using real glyph advances."""
     words, lines, cur = text.split(), [], ""
     for word in words:
         trial = f"{cur} {word}".strip()
@@ -87,8 +94,6 @@ def wrap(table, text, size, maxw, ls=0.0):
 def esc(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
-# ------------------------------------------------------------------ svg helpers
-
 def font_b64(path, text):
     font = TTFont(path)
     opts = subset.Options()
@@ -103,6 +108,8 @@ def font_b64(path, text):
     font.save(buf)
     font.close()
     return base64.b64encode(buf.getvalue()).decode("ascii")
+
+# --------------------------------------------------------------------- geometry
 
 def burst_path(r_out, r_in, points=12):
     d = []
@@ -121,32 +128,47 @@ def rays(cx, cy, n=18, skip_left=True, reach=1400):
         out.append(f"M{cx} {cy}L{cx + reach*math.cos(a):.0f} {cy + reach*math.sin(a):.0f}")
     return " ".join(out)
 
-def bang(txt, x, y, size, fill, ls=2, anchor="start", cls=""):
-    c = f'bang {cls}'.strip()
-    return (f'<text class="{c}" x="{x}" y="{y}" font-size="{size}" letter-spacing="{ls}" '
+# ----------------------------------------------------------------- slice machinery
+
+SLICES = []
+CUR = None
+y = 0
+
+def slice_begin(name, href=None, alt=""):
+    global CUR
+    CUR = {"name": name, "href": href, "alt": alt, "frags": [],
+           "bg": set(), "cg": set(), "y0": y}
+    SLICES.append(CUR)
+
+def slice_end():
+    CUR["y1"] = y
+
+def add(frag):
+    CUR["frags"].append(frag)
+
+def bang(txt, x, y_, size, fill, ls=2, anchor="start", cls=""):
+    CUR["bg"].update(txt)
+    c = f"bang {cls}".strip()
+    return (f'<text class="{c}" x="{x}" y="{y_}" font-size="{size}" letter-spacing="{ls}" '
             f'fill="{fill}" text-anchor="{anchor}">{esc(txt)}</text>')
 
-def body(txt, x, y, size, fill, anchor="start"):
-    return (f'<text class="body" x="{x}" y="{y}" font-size="{size}" fill="{fill}" '
+def body(txt, x, y_, size, fill, anchor="start"):
+    CUR["cg"].update(txt)
+    c = "body"
+    return (f'<text class="{c}" x="{x}" y="{y_}" font-size="{size}" fill="{fill}" '
             f'text-anchor="{anchor}">{esc(txt)}</text>')
 
-def shadow(txt, x, y, size, ls, face, mid, bot, cls=""):
-    c = f'bang {cls}'.strip()
+def shadow(txt, x, y_, size, ls, face, mid, bot, cls=""):
+    CUR["bg"].update(txt)
+    c = f"bang {cls}".strip()
     def t(dx, dy, fill):
-        return (f'<text class="{c}" x="{x+dx}" y="{y+dy}" font-size="{size}" '
+        return (f'<text class="{c}" x="{x+dx}" y="{y_+dy}" font-size="{size}" '
                 f'letter-spacing="{ls}" fill="{fill}">{esc(txt)}</text>')
     return t(10, 10, bot) + t(5, 5, mid) + t(0, 0, face)
 
 # ========================================================================= blocks
 
-P = []          # svg fragments
-y = 0           # running cursor
-
-def add(frag):
-    P.append(frag)
-
 def para(lines, x, size, fill, lh):
-    """Emit wrapped lines from the cursor; returns height used."""
     global y
     for i, ln in enumerate(lines):
         add(body(ln, x, y + lh * (i + 1) - lh * 0.28, size, fill))
@@ -156,7 +178,6 @@ def banner(label, bg, fg, motif="dot"):
     global y
     h = 84
     if motif == "burst":
-        # a yellow burst would vanish on a yellow banner
         bf = CREAM if bg == YEL else YEL
         art = (f'<g transform="translate({W-PAD-46} {y+h//2})"><g class="spin">'
                f'<path d="{burst_path(30, 21, 10)}" fill="{bf}" stroke="{INK}" '
@@ -174,8 +195,7 @@ def banner(label, bg, fg, motif="dot"):
     add(bang(label, PAD + 26, y + 60, 54, fg, 3))
     y += h
 
-def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls):
-    """Art panel with SFX lettering, then the description inside the same page."""
+def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls, visit=None):
     global y
     ph = 212
     pid = f"clip{title.replace(' ', '')}"
@@ -184,7 +204,6 @@ def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls):
     add(f'<g clip-path="url(#{pid})">{art_fn(y, ph)}</g>')
     add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{ph}" fill="none" '
         f'stroke="{INK}" stroke-width="6"></rect>')
-
     add(f'<g transform="translate({PAD+34} {y+100})"><g class="{rot_cls}">'
         f'{shadow(sfx, 0, 0, 76, 3, face, mid, INK)}</g></g>')
 
@@ -199,8 +218,7 @@ def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls):
     add(bang(tag, W - PAD - 30 - gw / 2, y + 53, 22, INK, 2, "middle"))
     y += ph + 20
 
-    lines = wrap(MC, desc, 29, CONTENT - 20)
-    y += para(lines, PAD + 8, 29, INK, 42) + 14
+    y += para(wrap(MC, desc, 29, CONTENT - 20), PAD + 8, 29, INK, 42) + 14
 
     x = PAD + 8
     for t in tags:
@@ -209,24 +227,40 @@ def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls):
             f'stroke="{INK}" stroke-width="3"></rect>')
         add(body(t, x + tw2 / 2, y + 27, 23, INK, "middle"))
         x += tw2 + 10
+    if visit:
+        label = f"VISIT {visit}"
+        vw = wide(MB, label, 24, 2) + 34
+        add(f'<rect x="{x:.0f}" y="{y-2}" width="{vw:.0f}" height="42" fill="{RED}" '
+            f'stroke="{INK}" stroke-width="3"></rect>')
+        add(bang(label, x + vw / 2, y + 28, 24, CREAM, 2, "middle"))
     y += 38 + 34
 
 def rows(data, label_w, size=27, lh=38):
-    """Two-column striped list; wraps the right-hand column."""
     global y
     for i, (label, value) in enumerate(data):
         vlines = wrap(MC, value, size, CONTENT - label_w - 60)
         h = max(lh * len(vlines) + 26, 64)
         if i % 2 == 0:
-            add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{h}" fill="{INK}" '
-                f'opacity="0.055"></rect>')
-        add(f'<rect x="{PAD}" y="{y+h-2}" width="{CONTENT}" height="2" fill="{INK}" '
-            f'opacity="0.18"></rect>')
+            add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{h}" fill="{INK}" opacity="0.055"></rect>')
+        add(f'<rect x="{PAD}" y="{y+h-2}" width="{CONTENT}" height="2" fill="{INK}" opacity="0.18"></rect>')
         add(bang(label, PAD + 22, y + 44, 30, RED, 2))
         for j, ln in enumerate(vlines):
             add(body(ln, PAD + label_w, y + 42 + j * lh, size, INK))
         y += h
     y += 24
+
+def contact_row(label, value, idx):
+    """One clickable letters-page row, its own slice."""
+    global y
+    h = 66
+    if idx % 2 == 0:
+        add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{h}" fill="{INK}" opacity="0.055"></rect>')
+    add(f'<rect x="{PAD}" y="{y+h-2}" width="{CONTENT}" height="2" fill="{INK}" opacity="0.18"></rect>')
+    add(body(f"{label}:", PAD + 30, y + 44, 27, INK))
+    add(body(value, PAD + 206, y + 44, 27, RED))
+    add(f'<path d="M{W-PAD-54} {y+28}l16 10-16 10" fill="none" stroke="{RED}" '
+        f'stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>')
+    y += h
 
 # ============================================================================ art
 
@@ -253,13 +287,15 @@ def art_grid(y0, h):
 
 # ========================================================================== build
 
-# ---- top block: masthead, cover art, tagline (full bleed)
+PORTFOLIO = "https://hakkan.is-a.dev"
+
+# ---- SLICE 1: masthead, cover, tagline, origin, "in this issue"
+slice_begin("01-cover", PORTFOLIO, "THE AMAZING HAKKAN No. 22 cover and origin story")
 MAST, COVER, TAG = 52, 400, 62
 add(f'<rect x="0" y="0" width="{W}" height="{MAST+COVER+TAG}" fill="{BLU}"></rect>')
-add(f'<g clip-path="url(#cover)">')
+add('<g clip-path="url(#cover)">')
 add(f'<g class="drift"><rect x="-200" y="-200" width="1400" height="1100" fill="url(#dots)"></rect></g>')
 add(f'<path class="pulse" d="{rays(640, 220)}" stroke="{CREAM}" stroke-width="5" fill="none"></path>')
-# hero, drawn in its original 1200-wide coordinates and scaled into place
 add('<g transform="translate(18 11) scale(0.73)">'
     f'<path d="M848 344C726 378 664 476 648 604L748 604C756 482 786 406 856 364Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
     f'<path d="M912 344C1034 378 1096 476 1112 604L1012 604C1004 482 974 406 904 364Z" fill="{RED}" stroke="{INK}" stroke-width="7" stroke-linejoin="round"></path>'
@@ -303,7 +339,6 @@ add(bang("AT LAST!", 30, MAST + COVER + 44, 38, RED, 2))
 add(bang("AN ENGINEER WHO SHIPS.", 212, MAST + COVER + 44, 38, INK, 2))
 y = MAST + COVER + TAG + 34
 
-# ---- origin
 banner("ORIGIN STORY...", YEL, INK)
 y += 22
 for lead, rest in [
@@ -314,34 +349,47 @@ for lead, rest in [
     ("And so a Full Stack AI Engineer was born.",
      "Now it is AI-first products in production at Persist Ventures: adaptive learning platforms, desktop agents, and automation that simply keeps running."),
 ]:
-    add(f'<rect x="{PAD}" y="{y-6}" width="6" height="{42*len(wrap(MC, lead + " " + rest, 29, CONTENT-40))+10}" fill="{RED}"></rect>')
+    n = len(wrap(MC, lead + " " + rest, 29, CONTENT - 40))
+    add(f'<rect x="{PAD}" y="{y-6}" width="6" height="{42*n+10}" fill="{RED}"></rect>')
     y += para(wrap(MC, lead + " " + rest, 29, CONTENT - 40), PAD + 24, 29, INK, 42) + 26
 y += 12
-
-# ---- projects
 banner("IN THIS ISSUE...", RED, CREAM, "burst")
 y += 24
+slice_end()
+
+# ---- SLICES 2-5: one per project
+slice_begin("02-ohm", "https://ohmschool.org", "OHM School - AI learning platform")
 project("TEACH!", "OHM SCHOOL", "FIRST APPEARANCE", BLU, YEL, RED, art_speed,
         "An AI learning platform that rearranges the lesson around whoever is sitting in "
         "front of it. Resident tutor Ollie, mastery tracking, assessments and recommendations "
-        "that adapt as the learner moves. ohmschool.org",
-        ["Next.js", "TypeScript", "LLM", "Postgres"], "pop1")
+        "that adapt as the learner moves.",
+        ["Next.js", "TypeScript", "LLM"], "pop1", visit="OHMSCHOOL.ORG")
+slice_end()
+
+slice_begin("03-aura", None, "Aura Desktop - AI desktop assistant, in development")
 project("AUTOMATE!", "AURA DESKTOP", "IN DEVELOPMENT", RED, YEL, INK, art_impact,
         "A desktop AI assistant that can actually press the buttons. Voice interaction in, "
         "desktop and browser automation out, several LLM providers behind a single door so "
         "the model is a choice rather than a dependency.",
         ["Electron", "Node.js", "Voice", "Multi-LLM"], "pop2")
+slice_end()
+
+slice_begin("04-portfolio", PORTFOLIO, "Portfolio - a terminal-driven portfolio")
 project("TYPE!", "PORTFOLIO", "FAN FAVOURITE", YEL, RED, CREAM, art_rings,
         "A portfolio you drive from a command line. Built on the suspicion that a portfolio "
-        "should ask something of the person reading it. hakkan.is-a.dev",
-        ["React", "Terminal UI", "Vercel"], "pop3")
+        "should ask something of the person reading it.",
+        ["React", "Terminal UI", "Vercel"], "pop3", visit="HAKKAN.IS-A.DEV")
+slice_end()
+
+slice_begin("05-commithabit", "https://commithabit.vercel.app", "CommitHabit - contribution streak automation")
 project("COMMIT!", "COMMITHABIT", "DAILY SERIAL", INK, YEL, RED, art_grid,
         "Keeps the contribution streak alive. A tool about consistency has to be more "
-        "consistent than the habit it is protecting, so it runs unattended. "
-        "commithabit.vercel.app",
-        ["Node.js", "GitHub API", "Cron"], "pop4")
+        "consistent than the habit it is protecting, so it runs unattended.",
+        ["Node.js", "GitHub API", "Cron"], "pop4", visit="COMMITHABIT.VERCEL.APP")
+slice_end()
 
-# ---- stack
+# ---- SLICE 6: stack, powers, next issue, letters heading
+slice_begin("06-stack", None, "The utility belt, known powers and next issue")
 banner("THE UTILITY BELT", BLU, YEL, "march")
 y += 20
 rows([
@@ -353,7 +401,6 @@ rows([
     ("6", "Cloud and DevOps:  Git, GitHub, Docker, Vercel, Netlify, Render"),
 ], label_w=78)
 
-# ---- powers
 banner("KNOWN POWERS", YEL, INK, "burst")
 y += 20
 POWERS = ["AI agents and autonomy", "Electron desktop apps", "Full stack web platforms",
@@ -361,18 +408,16 @@ POWERS = ["AI agents and autonomy", "Electron desktop apps", "Full stack web pla
           "RAG and knowledge systems", "Premium UI/UX detail", "Performance tuning"]
 cw3 = (CONTENT - 24) / 3
 for r in range(3):
-    rowh = 78
     for c in range(3):
         t = POWERS[r * 3 + c]
         bx = PAD + c * (cw3 + 12)
-        add(f'<rect x="{bx:.0f}" y="{y}" width="{cw3:.0f}" height="{rowh}" fill="{CREAM}" '
+        add(f'<rect x="{bx:.0f}" y="{y}" width="{cw3:.0f}" height="78" fill="{CREAM}" '
             f'stroke="{INK}" stroke-width="4"></rect>')
         for j, ln in enumerate(wrap(MC, t, 23, cw3 - 24)):
             add(body(ln, bx + cw3 / 2, y + 34 + j * 28, 23, INK, "middle"))
-    y += rowh + 12
+    y += 90
 y += 22
 
-# ---- next issue
 NH = 118
 add(f'<clipPath id="nx"><rect x="{PAD}" y="{y}" width="{CONTENT}" height="{NH}"></rect></clipPath>')
 add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{NH}" fill="{INK}"></rect>')
@@ -388,21 +433,28 @@ y += NH + 24
 y += para(wrap(MC, "AI agents, MCP, RAG and LLM workflows. Desktop automation, system design, "
                    "and the daily grind of data structures and algorithms.", 29, CONTENT - 20),
           PAD + 8, 29, INK, 42) + 34
-
-# ---- letters
 banner("LETTERS PAGE", CREAM, INK)
 y += 20
-y += para(wrap(MC, "Write in. Interesting problems get answered first.", 29, CONTENT - 20),
-          PAD + 8, 29, INK, 42) + 18
-rows([
-    ("", "Portfolio:  hakkan.is-a.dev"),
-    ("", "Persist:  hakkan.persist.org"),
-    ("", "Email:  hakkanparbej@gmail.com"),
-    ("", "LinkedIn:  linkedin.com/in/Hakkan"),
-    ("", "GitHub:  github.com/HakkanShah"),
-], label_w=30)
+y += para(wrap(MC, "Write in. Interesting problems get answered first. Every line below is a link.",
+                29, CONTENT - 20), PAD + 8, 29, INK, 42) + 18
+slice_end()
 
-# ---- colophon
+# ---- SLICES 7-11: one clickable contact row each
+CONTACTS = [
+    ("07-c-portfolio", "Portfolio", "hakkan.is-a.dev", PORTFOLIO),
+    ("08-c-persist", "Persist", "hakkan.persist.org", "https://hakkan.persist.org"),
+    ("09-c-email", "Email", "hakkanparbej@gmail.com", "mailto:hakkanparbej@gmail.com"),
+    ("10-c-linkedin", "LinkedIn", "linkedin.com/in/Hakkan", "https://linkedin.com/in/Hakkan"),
+    ("11-c-github", "GitHub", "github.com/HakkanShah", "https://github.com/HakkanShah"),
+]
+for i, (name, label, value, href) in enumerate(CONTACTS):
+    slice_begin(name, href, f"{label} - {value}")
+    contact_row(label, value, i)
+    slice_end()
+
+# ---- SLICE 12: colophon
+slice_begin("12-colophon", None, "Approved by the Commits Code Authority - printed in Kolkata")
+y += 24
 FH = 96
 add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{FH}" fill="{CREAM}" stroke="{INK}" stroke-width="6"></rect>')
 add(f'<rect x="{PAD+22}" y="{y+20}" width="250" height="56" fill="none" stroke="{INK}" stroke-width="4"></rect>')
@@ -414,106 +466,98 @@ for bw in [3, 2, 5, 2, 4, 2, 6, 2, 4, 5, 2, 4, 2, 5, 2]:
     add(f'<rect x="{bx}" y="{y+28}" width="{bw}" height="42" fill="{INK}"></rect>')
     bx += bw + 4
 y += FH + PAD
-
-H = int(y)
+slice_end()
 
 # ---------------------------------------------------------------------- assemble
 
-GLYPHS_B = "".join(sorted(set(
-    "THE AMAZINGHAKKANFULSTCIER0123456789NO.KLEDTWFRSHIPD<>/!"
-    "ORIGINSTY...HSUELBPWMCXQJVZ-:,&'" )))
-GLYPHS_C = "".join(sorted(set(
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    " .,:;'\"!?()-/&@+" )))
-
-style = f'''
-@font-face {{ font-family: "Bangers"; font-style: normal; font-weight: 400; src: url(data:font/woff2;base64,{font_b64(BANGERS_SRC, GLYPHS_B)}) format("woff2"); }}
-@font-face {{ font-family: "ComicNeue"; font-style: normal; font-weight: 700; src: url(data:font/woff2;base64,{font_b64(COMIC_SRC, GLYPHS_C)}) format("woff2"); }}
-@keyframes breathe {{ 0%, 100% {{ transform: scale(1); }} 48% {{ transform: scale(1.018); }} }}
-@keyframes spin {{ to {{ transform: rotate(360deg); }} }}
-@keyframes pulse {{ 0%, 100% {{ opacity: 0.40; }} 50% {{ opacity: 0.80; }} }}
-@keyframes drift {{ to {{ transform: translate(180px, 180px); }} }}
-@keyframes bob {{ 0%, 100% {{ transform: translateY(0); }} 50% {{ transform: translateY(-8px); }} }}
-@keyframes blink {{ 0%, 49% {{ opacity: 1; }} 50%, 100% {{ opacity: 0.1; }} }}
-@keyframes march {{ to {{ transform: translateX(34px); }} }}
-@keyframes pop1 {{ 0%, 100% {{ transform: scale(1) rotate(-5deg); }} 46% {{ transform: scale(1.06) rotate(-5deg); }} }}
-@keyframes pop2 {{ 0%, 100% {{ transform: scale(1) rotate(4deg); }} 46% {{ transform: scale(1.06) rotate(4deg); }} }}
-@keyframes pop3 {{ 0%, 100% {{ transform: scale(1) rotate(-3deg); }} 46% {{ transform: scale(1.06) rotate(-3deg); }} }}
-@keyframes pop4 {{ 0%, 100% {{ transform: scale(1) rotate(5deg); }} 46% {{ transform: scale(1.06) rotate(5deg); }} }}
-.bang {{ font-family: "Bangers", Impact, sans-serif; }}
-.body {{ font-family: "ComicNeue", "Trebuchet MS", Verdana, sans-serif; font-weight: 700; }}
-.breathe {{ animation: breathe 5.5s ease-in-out infinite; transform-origin: left center; }}
-.spin {{ animation: spin 26s linear infinite; }}
-.pulse {{ animation: pulse 3.2s ease-in-out infinite; }}
-.drift {{ animation: drift 44s linear infinite; }}
-.bob {{ animation: bob 4.6s ease-in-out infinite; }}
-.bob2 {{ animation: bob 5.9s ease-in-out infinite; }}
-.blink {{ animation: blink 1.4s steps(1, end) infinite; }}
-.march {{ animation: march 2.2s linear infinite; }}
-.pop1 {{ animation: pop1 2.4s ease-in-out infinite; }}
-.pop2 {{ animation: pop2 2.9s ease-in-out infinite; }}
-.pop3 {{ animation: pop3 2.6s ease-in-out infinite; }}
-.pop4 {{ animation: pop4 3.1s ease-in-out infinite; }}
-@media (prefers-reduced-motion: reduce) {{
+KEYFRAMES = """
+@keyframes breathe { 0%, 100% { transform: scale(1); } 48% { transform: scale(1.018); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%, 100% { opacity: 0.40; } 50% { opacity: 0.80; } }
+@keyframes drift { to { transform: translate(180px, 180px); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.1; } }
+@keyframes march { to { transform: translateX(34px); } }
+@keyframes pop1 { 0%, 100% { transform: scale(1) rotate(-5deg); } 46% { transform: scale(1.06) rotate(-5deg); } }
+@keyframes pop2 { 0%, 100% { transform: scale(1) rotate(4deg); } 46% { transform: scale(1.06) rotate(4deg); } }
+@keyframes pop3 { 0%, 100% { transform: scale(1) rotate(-3deg); } 46% { transform: scale(1.06) rotate(-3deg); } }
+@keyframes pop4 { 0%, 100% { transform: scale(1) rotate(5deg); } 46% { transform: scale(1.06) rotate(5deg); } }
+.bang { font-family: "Bangers", Impact, sans-serif; }
+.body { font-family: "ComicNeue", "Trebuchet MS", Verdana, sans-serif; font-weight: 700; }
+.breathe { animation: breathe 5.5s ease-in-out infinite; transform-origin: left center; }
+.spin { animation: spin 26s linear infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.drift { animation: drift 44s linear infinite; }
+.bob { animation: bob 4.6s ease-in-out infinite; }
+.bob2 { animation: bob 5.9s ease-in-out infinite; }
+.blink { animation: blink 1.4s steps(1, end) infinite; }
+.march { animation: march 2.2s linear infinite; }
+.pop1 { animation: pop1 2.4s ease-in-out infinite; }
+.pop2 { animation: pop2 2.9s ease-in-out infinite; }
+.pop3 { animation: pop3 2.6s ease-in-out infinite; }
+.pop4 { animation: pop4 3.1s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
   .breathe, .spin, .pulse, .drift, .bob, .bob2, .blink, .march,
-  .pop1, .pop2, .pop3, .pop4 {{ animation: none; }}
-}}
-'''
-
-svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="THE AMAZING HAKKAN, issue 22. Hakkan Parbej Shah, Full Stack AI Engineer. A comic book page covering his origin, projects OHM School, Aura Desktop, Portfolio and CommitHabit, his tech stack, and contact details.">
-<title>THE AMAZING HAKKAN &#8212; No. 22 &#8212; Full Stack AI Engineer</title>
-<defs>
-<style>{style}</style>
-<pattern id="dots" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="2.6" cy="2.6" r="2" fill="{CREAM}" opacity="0.30"></circle></pattern>
-<pattern id="pdots" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="2.6" cy="2.6" r="2" fill="{INK}" opacity="0.07"></circle></pattern>
-<clipPath id="cover"><rect x="0" y="{MAST}" width="{W}" height="{COVER}"></rect></clipPath>
-<clipPath id="page"><rect x="0" y="0" width="{W}" height="{H}"></rect></clipPath>
-</defs>
-<rect width="{W}" height="{H}" fill="{PAPER}"></rect>
-<g clip-path="url(#page)"><g class="drift"><rect x="-200" y="-200" width="1400" height="{H+400}" fill="url(#pdots)"></rect></g></g>
-{"".join(P)}
-<rect x="4" y="4" width="{W-8}" height="{H-8}" fill="none" stroke="{INK}" stroke-width="8"></rect>
-</svg>
-'''
+  .pop1, .pop2, .pop3, .pop4 { animation: none; }
+}
+"""
 
 os.makedirs(OUT, exist_ok=True)
-path = os.path.join(OUT, "comic-page.svg")
-open(path, "w").write(svg)
-print(f"  comic-page.svg  {W}x{H}  {os.path.getsize(path)/1024:.1f} KB")
+total = len(SLICES)
+total_bytes = 0
+rows_md = []
 
-# ===================================================== comic buttons for README
-# Links cannot live inside the page SVG, so the markdown link row underneath
-# uses these instead of GitHub's default blue text.
+for idx, s in enumerate(SLICES):
+    h = s["y1"] - s["y0"]
+    faces = ""
+    if s["bg"]:
+        faces += (f'@font-face {{ font-family: "Bangers"; font-style: normal; font-weight: 400; '
+                  f'src: url(data:font/woff2;base64,{font_b64(BANGERS_SRC, "".join(sorted(s["bg"])))}) format("woff2"); }}\n')
+    if s["cg"]:
+        faces += (f'@font-face {{ font-family: "ComicNeue"; font-style: normal; font-weight: 700; '
+                  f'src: url(data:font/woff2;base64,{font_b64(COMIC_SRC, "".join(sorted(s["cg"])))}) format("woff2"); }}\n')
 
-def button(fname, label, bg, fg):
-    pad, h, fs, off = 28, 64, 30, 6
-    tw = wide(MB, label, fs, 2)
-    bw = int(tw + pad * 2)
-    W2, H2 = bw + off, h + off
-    glyphs = "".join(sorted(set(label)))
-    face = font_b64(BANGERS_SRC, glyphs)
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W2}" height="{H2}" viewBox="0 0 {W2} {H2}" role="img" aria-label="{esc(label)}">
-<title>{esc(label)}</title>
-<defs><style>
-@font-face {{ font-family: "Bangers"; font-style: normal; font-weight: 400; src: url(data:font/woff2;base64,{face}) format("woff2"); }}
-.bang {{ font-family: "Bangers", Impact, sans-serif; }}
-</style></defs>
-<rect x="{off}" y="{off}" width="{bw}" height="{h}" fill="{INK}"></rect>
-<rect x="0" y="0" width="{bw}" height="{h}" fill="{bg}" stroke="{INK}" stroke-width="5"></rect>
-<text class="bang" x="{bw/2:.0f}" y="{h/2+11:.0f}" font-size="{fs}" letter-spacing="2" fill="{fg}" text-anchor="middle">{esc(label)}</text>
+    # page edges: side bars always, cap the top of the first slice and the bottom of the last
+    edges = (f'<rect x="0" y="0" width="8" height="{h}" fill="{INK}"></rect>'
+             f'<rect x="{W-8}" y="0" width="8" height="{h}" fill="{INK}"></rect>')
+    if idx == 0:
+        edges += f'<rect x="0" y="0" width="{W}" height="8" fill="{INK}"></rect>'
+    if idx == total - 1:
+        edges += f'<rect x="0" y="{h-8}" width="{W}" height="8" fill="{INK}"></rect>'
+
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{h}" viewBox="0 0 {W} {h}" role="img" aria-label="{esc(s['alt'])}">
+<title>{esc(s['alt'])}</title>
+<defs>
+<style>{faces}{KEYFRAMES}</style>
+<pattern id="dots" width="11" height="11" patternUnits="userSpaceOnUse"><circle cx="2.6" cy="2.6" r="2" fill="{CREAM}" opacity="0.30"></circle></pattern>
+<pattern id="pdots" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="translate(0 {-s['y0'] % 11})"><circle cx="2.6" cy="2.6" r="2" fill="{INK}" opacity="0.07"></circle></pattern>
+<clipPath id="cover"><rect x="0" y="{MAST}" width="{W}" height="{COVER}"></rect></clipPath>
+</defs>
+<rect width="{W}" height="{h}" fill="{PAPER}"></rect>
+<rect width="{W}" height="{h}" fill="url(#pdots)"></rect>
+<g transform="translate(0 {-s['y0']})">{"".join(s["frags"])}</g>
+{edges}
 </svg>
 '''
+    fname = f"page-{s['name']}.svg"
     path = os.path.join(OUT, fname)
     open(path, "w").write(svg)
-    print(f"  {fname:28s} {os.path.getsize(path)/1024:5.1f} KB")
+    size = os.path.getsize(path)
+    total_bytes += size
+    print(f"  {fname:26s} {W}x{h:<5d} {size/1024:6.1f} KB  {'-> ' + s['href'] if s['href'] else ''}")
 
-for fname, label, bg, fg in [
-    ("btn-portfolio.svg",  "PORTFOLIO",   YEL, INK),
-    ("btn-persist.svg",    "PERSIST",     YEL, INK),
-    ("btn-resume.svg",     "R\u00c9SUM\u00c9",      YEL, INK),
-    ("btn-linkedin.svg",   "LINKEDIN",    YEL, INK),
-    ("btn-email.svg",      "EMAIL",       YEL, INK),
-    ("btn-ohm.svg",        "OHM SCHOOL",  RED, CREAM),
-    ("btn-commit.svg",     "COMMITHABIT", RED, CREAM),
-]:
-    button(fname, label, bg, fg)
+    img = f'<img alt="{esc(s["alt"])}" src="assets/{fname}" width="100%" align="left">'
+    rows_md.append(f'<a href="{s["href"]}">{img}</a>' if s["href"] else img)
+
+print(f"  {'TOTAL':26s} {'':11s} {total_bytes/1024:6.1f} KB  ({total} slices)")
+
+readme = "\n".join(rows_md) + '\n<br clear="all">\n'
+readme += '''
+<div align="center">
+
+<img height="180" alt="Contribution streak" src="https://streak-stats.demolab.com?user=HakkanShah&background=F5ECD8&border=141418&stroke=141418&ring=E0241B&fire=E0241B&currStreakNum=141418&sideNums=141418&currStreakLabel=E0241B&sideLabels=141418&dates=6A6252&border_radius=0">
+
+</div>
+'''
+open(os.path.join(REPO, "README.md"), "w").write(readme)
+print("  README.md written")
