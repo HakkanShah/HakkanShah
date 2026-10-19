@@ -322,7 +322,7 @@ def art_grid(y0, h):
 PORTFOLIO = "https://hakkan.is-a.dev"
 
 # ---- SLICE 1: masthead, cover, tagline, origin, "in this issue"
-slice_begin("01-cover", PORTFOLIO, "THE AMAZING HAKKAN No. 22 cover and origin story")
+slice_begin("01-cover", PORTFOLIO, "Hakkan Shah, Full Stack AI Engineer based in Kolkata, India, working remotely at Persist Ventures. Comic book cover and origin story: it began with one project that had to work, then it met real users, and now it is AI-first products in production.")
 MAST, COVER, TAG = 52, 400, 62
 add(f'<rect x="0" y="0" width="{W}" height="{MAST+COVER+TAG}" fill="{BLU}"></rect>')
 add('<g clip-path="url(#cover)">')
@@ -417,7 +417,7 @@ y += 24
 slice_end()
 
 # ---- SLICES 2-5: one per project
-slice_begin("02-ohm", "https://ohmschool.org", "OHM School - AI learning platform")
+slice_begin("02-ohm", "https://ohmschool.org", "OHM School, an AI-powered learning platform that rearranges the lesson around each learner, with the tutor Ollie, mastery tracking and assessments. Built with Next.js, TypeScript and LLMs. ohmschool.org")
 project("TEACH!", "OHM SCHOOL", "FIRST APPEARANCE", BLU, YEL, RED, art_speed,
         "An AI learning platform that rearranges the lesson around whoever is sitting in "
         "front of it. Resident tutor Ollie, mastery tracking, assessments and recommendations "
@@ -427,7 +427,7 @@ project("TEACH!", "OHM SCHOOL", "FIRST APPEARANCE", BLU, YEL, RED, art_speed,
 slice_end()
 
 slice_begin("03-aura", "https://aura-website-ashen.vercel.app/",
-            "Aura Desktop - the UI for OpenClaw, now in beta")
+            "Aura Desktop, a desktop AI assistant you chat or speak to that books flights, applies to jobs and summarises mail. Electron, Node.js, voice and multi-LLM, in beta v0.2.0. aura-website-ashen.vercel.app")
 project("AUTOMATE!", "AURA DESKTOP", "BETA V0.2.0", RED, YEL, INK, art_impact,
         "A desktop AI assistant that can actually press the buttons. Chat or speak your "
         "intent and watch it book flights, apply to jobs, summarise your inbox and run "
@@ -436,7 +436,7 @@ project("AUTOMATE!", "AURA DESKTOP", "BETA V0.2.0", RED, YEL, INK, art_impact,
         thumb=os.path.join(HERE, "thumbs", "aura.jpg"))
 slice_end()
 
-slice_begin("04-portfolio", PORTFOLIO, "Portfolio - a terminal-driven portfolio")
+slice_begin("04-portfolio", PORTFOLIO, "Portfolio, a developer portfolio you drive from a command line. React, terminal UI, Vercel. hakkan.is-a.dev")
 project("TYPE!", "PORTFOLIO", "FAN FAVOURITE", YEL, RED, CREAM, art_rings,
         "A portfolio you drive from a command line. Built on the suspicion that a portfolio "
         "should ask something of the person reading it.",
@@ -444,7 +444,7 @@ project("TYPE!", "PORTFOLIO", "FAN FAVOURITE", YEL, RED, CREAM, art_rings,
         thumb=os.path.join(HERE, "thumbs", "portfolio.jpg"))
 slice_end()
 
-slice_begin("05-commithabit", "https://commithabit.vercel.app", "CommitHabit - contribution streak automation")
+slice_begin("05-commithabit", "https://commithabit.vercel.app", "CommitHabit, automation that keeps a GitHub contribution streak alive unattended. Node.js, GitHub API, cron. commithabit.vercel.app")
 project("COMMIT!", "COMMITHABIT", "DAILY SERIAL", INK, YEL, RED, art_grid,
         "Keeps the contribution streak alive. A tool about consistency has to be more "
         "consistent than the habit it is protecting, so it runs unattended.",
@@ -453,7 +453,7 @@ project("COMMIT!", "COMMITHABIT", "DAILY SERIAL", INK, YEL, RED, art_grid,
 slice_end()
 
 # ---- SLICE 6: stack, powers, next issue, letters heading
-slice_begin("06-stack", None, "The utility belt, known powers and next issue")
+slice_begin("06-stack", None, "Tech stack. Languages: Java, TypeScript, JavaScript, Python, C. Frontend: Next.js, React, Tailwind CSS, Shadcn UI, HTML, CSS. Backend: Node.js, Express, REST APIs. Databases: MongoDB, PostgreSQL, MySQL, Redis, Firebase, Supabase. AI and LLMs: OpenAI, Gemini, Claude, Groq, NVIDIA NIM. Cloud and DevOps: Git, GitHub, Docker, Vercel, Netlify, Render. Also AI agents, RAG, MCP, Electron desktop apps, voice interfaces and performance tuning.")
 banner("THE UTILITY BELT", BLU, YEL, "march")
 y += 20
 rows([
@@ -657,6 +657,54 @@ readme += '''
 <img alt="Readers" src="https://komarev.com/ghpvc/?username=HakkanShah&label=READERS&color=E0241B&style=flat-square">
 
 </div>
+
+<details>
+<summary><b>Read this profile as plain text</b> &mdash; for search engines, screen readers, and if the images do not load</summary>
+
+## Hakkan Shah &mdash; Full Stack AI Engineer
+
+Kolkata, India &middot; remote &middot; currently at [Persist Ventures](https://persist.org)
+
+I build AI-first products that have to survive real users: adaptive learning platforms,
+desktop agents, and automation that keeps running unattended.
+
+### Projects
+
+- **[OHM School](https://ohmschool.org)** &mdash; an AI-powered learning platform that rearranges the
+  lesson around whoever is using it. Resident tutor Ollie, mastery tracking, assessments and
+  adaptive recommendations. *Next.js, TypeScript, LLM.*
+- **[Aura Desktop](https://aura-website-ashen.vercel.app/)** &mdash; a desktop AI assistant you chat or
+  speak to, which books flights, applies to jobs and summarises mail. Beta v0.2.0.
+  *Electron, Node.js, voice, multi-LLM.*
+- **[Portfolio](https://hakkan.is-a.dev)** &mdash; a developer portfolio you drive from a command line.
+  *React, terminal UI, Vercel.*
+- **[CommitHabit](https://commithabit.vercel.app)** &mdash; keeps a GitHub contribution streak alive,
+  unattended. *Node.js, GitHub API, cron.*
+
+### Tech stack
+
+| | |
+|:--|:--|
+| **Languages** | Java, TypeScript, JavaScript, Python, C |
+| **Frontend** | Next.js, React, Tailwind CSS, Shadcn UI, HTML, CSS |
+| **Backend** | Node.js, Express, REST APIs |
+| **Databases** | MongoDB, PostgreSQL, MySQL, Redis, Firebase, Supabase |
+| **AI & LLMs** | OpenAI, Google Gemini, Anthropic Claude, Groq, NVIDIA NIM |
+| **Cloud & DevOps** | Git, GitHub, Docker, Vercel, Netlify, Render |
+
+Also: AI agents and autonomous workflows, MCP, RAG and knowledge systems, Electron desktop
+apps, voice interfaces, developer tooling, UI/UX detail, performance tuning.
+
+### Contact
+
+- Portfolio &mdash; [hakkan.is-a.dev](https://hakkan.is-a.dev)
+- Persist &mdash; [hakkan.persist.org](https://hakkan.persist.org)
+- Email &mdash; [hakkanparbej@gmail.com](mailto:hakkanparbej@gmail.com)
+- LinkedIn &mdash; [linkedin.com/in/Hakkan](https://linkedin.com/in/Hakkan)
+- GitHub &mdash; [github.com/HakkanShah](https://github.com/HakkanShah)
+- [Resume (PDF)](https://github.com/HakkanShah/HakkanShah/raw/main/Hakkan_Parbej_Shah_Resume.pdf)
+
+</details>
 '''
 open(os.path.join(REPO, "README.md"), "w").write(readme)
 print("  README.md written")
