@@ -195,27 +195,48 @@ def banner(label, bg, fg, motif="dot"):
     add(bang(label, PAD + 26, y + 60, 54, fg, 3))
     y += h
 
-def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls, visit=None):
+def project(sfx, title, tag, bgc, face, mid, art_fn, desc, tags, rot_cls, visit=None, thumb=None):
     global y
-    ph = 212
+    ph = 252 if thumb else 212
     pid = f"clip{title.replace(' ', '')}"
     add(f'<clipPath id="{pid}"><rect x="{PAD}" y="{y}" width="{CONTENT}" height="{ph}"></rect></clipPath>')
     add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{ph}" fill="{bgc}"></rect>')
     add(f'<g clip-path="url(#{pid})">{art_fn(y, ph)}</g>')
     add(f'<rect x="{PAD}" y="{y}" width="{CONTENT}" height="{ph}" fill="none" '
         f'stroke="{INK}" stroke-width="6"></rect>')
-    add(f'<g transform="translate({PAD+34} {y+100})"><g class="{rot_cls}">'
+    sfx_y, chip_y = y + ph // 2 - 6, y + ph - 78
+    add(f'<g transform="translate({PAD+34} {sfx_y})"><g class="{rot_cls}">'
         f'{shadow(sfx, 0, 0, 76, 3, face, mid, INK)}</g></g>')
 
     tw = wide(MB, title, 32, 3) + 44
-    add(f'<rect x="{PAD+30}" y="{y+134}" width="{tw:.0f}" height="50" fill="{INK}" '
+    add(f'<rect x="{PAD+30}" y="{chip_y}" width="{tw:.0f}" height="50" fill="{INK}" '
         f'stroke="{CREAM}" stroke-width="4"></rect>')
-    add(bang(title, PAD + 52, y + 169, 32, CREAM, 3))
+    add(bang(title, PAD + 52, chip_y + 35, 32, CREAM, 3))
 
     gw = wide(MB, tag, 22, 2) + 28
-    add(f'<rect x="{W-PAD-30-gw:.0f}" y="{y+26}" width="{gw:.0f}" height="38" fill="{YEL}" '
-        f'stroke="{INK}" stroke-width="4"></rect>')
-    add(bang(tag, W - PAD - 30 - gw / 2, y + 53, 22, INK, 2, "middle"))
+    if thumb:
+        # Real landing-page shot, framed like a panel inset. The image is
+        # embedded because an SVG in an <img> cannot fetch anything external.
+        tx, ty, tw2, th2 = 452, y + 32, 380, 200
+        data = base64.b64encode(open(thumb, "rb").read()).decode("ascii")
+        add(f'<rect x="{tx+9}" y="{ty+9}" width="{tw2}" height="{th2}" fill="{INK}"></rect>')
+        add(f'<clipPath id="thumb{title.replace(" ", "")}"><rect x="{tx}" y="{ty}" '
+            f'width="{tw2}" height="{th2}"></rect></clipPath>')
+        add(f'<image x="{tx}" y="{ty}" width="{tw2}" height="{th2}" '
+            f'preserveAspectRatio="xMidYMid slice" clip-path="url(#thumb{title.replace(" ", "")})" '
+            f'href="data:image/jpeg;base64,{data}"></image>')
+        add(f'<rect x="{tx}" y="{ty}" width="{tw2}" height="{th2}" fill="none" '
+            f'stroke="{INK}" stroke-width="6"></rect>')
+        # the status tag becomes a sticker slapped on the corner of the shot
+        sx, sy = tx - 16, ty - 16
+        add(f'<g transform="rotate(-4 {sx+gw/2:.0f} {sy+19})">'
+            f'<rect x="{sx}" y="{sy}" width="{gw:.0f}" height="38" fill="{YEL}" '
+            f'stroke="{INK}" stroke-width="4"></rect>'
+            + bang(tag, sx + gw / 2, sy + 27, 22, INK, 2, "middle") + '</g>')
+    else:
+        add(f'<rect x="{W-PAD-30-gw:.0f}" y="{y+26}" width="{gw:.0f}" height="38" fill="{YEL}" '
+            f'stroke="{INK}" stroke-width="4"></rect>')
+        add(bang(tag, W - PAD - 30 - gw / 2, y + 53, 22, INK, 2, "middle"))
     y += ph + 20
 
     y += para(wrap(MC, desc, 29, CONTENT - 20), PAD + 8, 29, INK, 42) + 14
@@ -371,7 +392,8 @@ project("TEACH!", "OHM SCHOOL", "FIRST APPEARANCE", BLU, YEL, RED, art_speed,
         "An AI learning platform that rearranges the lesson around whoever is sitting in "
         "front of it. Resident tutor Ollie, mastery tracking, assessments and recommendations "
         "that adapt as the learner moves.",
-        ["Next.js", "TypeScript", "LLM"], "pop1", visit="OHMSCHOOL.ORG")
+        ["Next.js", "TypeScript", "LLM"], "pop1", visit="OHMSCHOOL.ORG",
+        thumb=os.path.join(HERE, "thumbs", "ohm.jpg"))
 slice_end()
 
 slice_begin("03-aura", None, "Aura Desktop - AI desktop assistant, in development")
@@ -393,7 +415,8 @@ slice_begin("05-commithabit", "https://commithabit.vercel.app", "CommitHabit - c
 project("COMMIT!", "COMMITHABIT", "DAILY SERIAL", INK, YEL, RED, art_grid,
         "Keeps the contribution streak alive. A tool about consistency has to be more "
         "consistent than the habit it is protecting, so it runs unattended.",
-        ["Node.js", "GitHub API", "Cron"], "pop4", visit="COMMITHABIT.VERCEL.APP")
+        ["Node.js", "GitHub API", "Cron"], "pop4", visit="COMMITHABIT.VERCEL.APP",
+        thumb=os.path.join(HERE, "thumbs", "commithabit.jpg"))
 slice_end()
 
 # ---- SLICE 6: stack, powers, next issue, letters heading
