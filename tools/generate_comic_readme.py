@@ -29,7 +29,7 @@ Other constraints:
     animations start when it loads, so a drifting page-wide texture would
     desync between slices. Animations that live inside one slice are fine.
 """
-import base64, io, math, os, urllib.request
+import base64, glob, hashlib, io, math, os, urllib.request
 from fontTools import subset
 from fontTools.ttLib import TTFont
 
@@ -408,7 +408,8 @@ slice_begin("04-portfolio", PORTFOLIO, "Portfolio - a terminal-driven portfolio"
 project("TYPE!", "PORTFOLIO", "FAN FAVOURITE", YEL, RED, CREAM, art_rings,
         "A portfolio you drive from a command line. Built on the suspicion that a portfolio "
         "should ask something of the person reading it.",
-        ["React", "Terminal UI", "Vercel"], "pop3", visit="HAKKAN.IS-A.DEV")
+        ["React", "Terminal UI", "Vercel"], "pop3", visit="HAKKAN.IS-A.DEV",
+        thumb=os.path.join(HERE, "thumbs", "portfolio.jpg"))
 slice_end()
 
 slice_begin("05-commithabit", "https://commithabit.vercel.app", "CommitHabit - contribution streak automation")
@@ -534,6 +535,11 @@ KEYFRAMES = """
 """
 
 os.makedirs(OUT, exist_ok=True)
+# Every slice filename carries a hash of its own content. GitHub proxies README
+# images through camo, which caches by URL, so rewriting a file in place leaves
+# the old picture on the page. A new hash means a new URL means a fresh fetch.
+for stale in glob.glob(os.path.join(OUT, "page-*.svg")):
+    os.remove(stale)
 total = len(SLICES)
 total_bytes = 0
 rows_md = []
@@ -570,7 +576,7 @@ for idx, s in enumerate(SLICES):
 {edges}
 </svg>
 '''
-    fname = f"page-{s['name']}.svg"
+    fname = f"page-{s['name']}.{hashlib.sha1(svg.encode()).hexdigest()[:8]}.svg"
     path = os.path.join(OUT, fname)
     open(path, "w").write(svg)
     size = os.path.getsize(path)
