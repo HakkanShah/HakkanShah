@@ -396,12 +396,14 @@ project("TEACH!", "OHM SCHOOL", "FIRST APPEARANCE", BLU, YEL, RED, art_speed,
         thumb=os.path.join(HERE, "thumbs", "ohm.jpg"))
 slice_end()
 
-slice_begin("03-aura", None, "Aura Desktop - AI desktop assistant, in development")
-project("AUTOMATE!", "AURA DESKTOP", "IN DEVELOPMENT", RED, YEL, INK, art_impact,
-        "A desktop AI assistant that can actually press the buttons. Voice interaction in, "
-        "desktop and browser automation out, several LLM providers behind a single door so "
-        "the model is a choice rather than a dependency.",
-        ["Electron", "Node.js", "Voice", "Multi-LLM"], "pop2")
+slice_begin("03-aura", "https://aura-website-ashen.vercel.app/",
+            "Aura Desktop - the UI for OpenClaw, now in beta")
+project("AUTOMATE!", "AURA DESKTOP", "BETA V0.2.0", RED, YEL, INK, art_impact,
+        "A desktop AI assistant that can actually press the buttons. Chat or speak your "
+        "intent and watch it book flights, apply to jobs, summarise your inbox and run "
+        "anything else in the browser. No code, no setup.",
+        ["Electron", "Node.js", "Voice"], "pop2", visit="AURA-WEBSITE.VERCEL.APP",
+        thumb=os.path.join(HERE, "thumbs", "aura.jpg"))
 slice_end()
 
 slice_begin("04-portfolio", PORTFOLIO, "Portfolio - a terminal-driven portfolio")

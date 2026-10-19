@@ -1,15 +1,15 @@
-<a href="https://hakkan.is-a.dev"><img alt="THE AMAZING HAKKAN No. 22 cover and origin story" src="assets/page-01-cover.42853b20.svg" width="100%" align="left"></a>
-<a href="https://ohmschool.org"><img alt="OHM School - AI learning platform" src="assets/page-02-ohm.f998c338.svg" width="100%" align="left"></a>
-<img alt="Aura Desktop - AI desktop assistant, in development" src="assets/page-03-aura.371d791b.svg" width="100%" align="left">
-<a href="https://hakkan.is-a.dev"><img alt="Portfolio - a terminal-driven portfolio" src="assets/page-04-portfolio.990fa470.svg" width="100%" align="left"></a>
-<a href="https://commithabit.vercel.app"><img alt="CommitHabit - contribution streak automation" src="assets/page-05-commithabit.305e2871.svg" width="100%" align="left"></a>
-<img alt="The utility belt, known powers and next issue" src="assets/page-06-stack.3de22b5d.svg" width="100%" align="left">
-<a href="https://hakkan.is-a.dev"><img alt="Portfolio - hakkan.is-a.dev" src="assets/page-07-c-portfolio.aa20d9b5.svg" width="100%" align="left"></a>
-<a href="https://hakkan.persist.org"><img alt="Persist - hakkan.persist.org" src="assets/page-08-c-persist.14543102.svg" width="100%" align="left"></a>
-<a href="mailto:hakkanparbej@gmail.com"><img alt="Email - hakkanparbej@gmail.com" src="assets/page-09-c-email.9ce0cfd7.svg" width="100%" align="left"></a>
-<a href="https://linkedin.com/in/Hakkan"><img alt="LinkedIn - linkedin.com/in/Hakkan" src="assets/page-10-c-linkedin.0c34ad9f.svg" width="100%" align="left"></a>
-<a href="https://github.com/HakkanShah"><img alt="GitHub - github.com/HakkanShah" src="assets/page-11-c-github.85324343.svg" width="100%" align="left"></a>
-<img alt="Approved by the Commits Code Authority - printed in Kolkata" src="assets/page-12-colophon.5ccd910c.svg" width="100%" align="left">
+<a href="https://hakkan.is-a.dev"><img alt="THE AMAZING HAKKAN No. 22 cover and origin story" src="assets/page-01-cover.d42e9358.svg" width="100%" align="left"></a>
+<a href="https://ohmschool.org"><img alt="OHM School - AI learning platform" src="assets/page-02-ohm.0475722e.svg" width="100%" align="left"></a>
+<a href="https://aura-website-ashen.vercel.app/"><img alt="Aura Desktop - the UI for OpenClaw, now in beta" src="assets/page-03-aura.0a26a4b5.svg" width="100%" align="left"></a>
+<a href="https://hakkan.is-a.dev"><img alt="Portfolio - a terminal-driven portfolio" src="assets/page-04-portfolio.f4d4053f.svg" width="100%" align="left"></a>
+<a href="https://commithabit.vercel.app"><img alt="CommitHabit - contribution streak automation" src="assets/page-05-commithabit.c950f27f.svg" width="100%" align="left"></a>
+<img alt="The utility belt, known powers and next issue" src="assets/page-06-stack.3b318921.svg" width="100%" align="left">
+<a href="https://hakkan.is-a.dev"><img alt="Portfolio - hakkan.is-a.dev" src="assets/page-07-c-portfolio.2c0a93d9.svg" width="100%" align="left"></a>
+<a href="https://hakkan.persist.org"><img alt="Persist - hakkan.persist.org" src="assets/page-08-c-persist.f5055f19.svg" width="100%" align="left"></a>
+<a href="mailto:hakkanparbej@gmail.com"><img alt="Email - hakkanparbej@gmail.com" src="assets/page-09-c-email.f775f476.svg" width="100%" align="left"></a>
+<a href="https://linkedin.com/in/Hakkan"><img alt="LinkedIn - linkedin.com/in/Hakkan" src="assets/page-10-c-linkedin.e2029593.svg" width="100%" align="left"></a>
+<a href="https://github.com/HakkanShah"><img alt="GitHub - github.com/HakkanShah" src="assets/page-11-c-github.2e0c70f0.svg" width="100%" align="left"></a>
+<img alt="Approved by the Commits Code Authority - printed in Kolkata" src="assets/page-12-colophon.ef303e49.svg" width="100%" align="left">
 <br clear="all">
 
 <div align="center">
